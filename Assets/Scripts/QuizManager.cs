@@ -25,6 +25,12 @@ public class QuizManager : MonoBehaviour
     private bool correctAnswer = true;                      //bool to decide if answer is correct or not
     private string answerWord;                              //string to store answer of current question
 
+
+
+
+    [Header("UI Image")]
+    public Image greenImage;
+    public Image redImage;
     private void Awake()
     {
         if (instance == null)
@@ -43,6 +49,7 @@ public class QuizManager : MonoBehaviour
     void SetQuestion()
     {
         gameStatus = GameStatus.Playing;                //set GameStatus to playing 
+        greenImage.enabled = false;
 
         //set the answerWord string variable
         answerWord = questionDataScriptable.questions[currentQuestionIndex].answer;
@@ -126,8 +133,10 @@ public class QuizManager : MonoBehaviour
                 //if answerWord[i] is not same as answerWordList[i].wordValue
                 if (char.ToUpper(answerWord[i]) != char.ToUpper(answerWordList[i].wordValue))
                 {
+                    redImage.enabled = true;
                     correctAnswer = false; //set it false
                     break; //and break from the loop
+                    
                 }
             }
 
@@ -135,12 +144,14 @@ public class QuizManager : MonoBehaviour
             if (correctAnswer)
             {
                 Debug.Log("Correct Answer");
+                greenImage.enabled = true;
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
 
                 //if currentQuestionIndex is less that total available questions
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
+                   
                     Invoke("SetQuestion", 0.5f); //go to next question
                 }
                 else
@@ -162,6 +173,11 @@ public class QuizManager : MonoBehaviour
 
             currentAnswerIndex--;
             answerWordList[currentAnswerIndex].SetWord('_');
+        }
+
+        if(redImage.enabled)
+        {
+            redImage.enabled = false;
         }
     }
 
