@@ -15,6 +15,8 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private Image questionImage;           //image element to show the image
     [SerializeField] private WordData[] answerWordList;     //list of answers word in the game
     [SerializeField] private WordData[] optionsWordList;    //list of options word in the game
+    public GameObject greenborder;
+    public GameObject redborder;
 
 
     private GameStatus gameStatus = GameStatus.Playing;     //to keep track of game status
@@ -135,13 +137,17 @@ public class QuizManager : MonoBehaviour
             if (correctAnswer)
             {
                 Debug.Log("Correct Answer");
+                greenborder.SetActive(true);
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
 
                 //if currentQuestionIndex is less that total available questions
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
+                    greenborder.SetActive(true);
+
                     Invoke("SetQuestion", 0.5f); //go to next question
+                    
                 }
                 else
                 {
