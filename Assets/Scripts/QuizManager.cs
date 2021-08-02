@@ -26,6 +26,11 @@ public class QuizManager : MonoBehaviour
     private string answerWord;                              //string to store answer of current question
 
 
+    private int currentHintIndex = 0; // index to keep track for Hint;
+
+    public Text Hint_txt;  // Text  to Show Hint;
+
+
 
 
     [Header("UI Image")]
@@ -106,6 +111,7 @@ public class QuizManager : MonoBehaviour
         }
 
         currentAnswerIndex = 0;
+        currentHintIndex = 0;
     }
 
     /// <summary>
@@ -122,6 +128,7 @@ public class QuizManager : MonoBehaviour
         answerWordList[currentAnswerIndex].SetWord(value.wordValue); //set the answer word list
 
         currentAnswerIndex++;   //increase currentAnswerIndex
+        currentHintIndex++;
 
         //if currentAnswerIndex is equal to answerWord length
         if (currentAnswerIndex == answerWord.Length)
@@ -181,13 +188,25 @@ public class QuizManager : MonoBehaviour
         }
     }
 
+
+    public void ShowHint()
+    {
+       Hint_txt.text = questionDataScriptable.questions[currentQuestionIndex].answer;
+
+    }
+
 }
+
+
+
+
 
 [System.Serializable]
 public class QuestionData
 {
     public Sprite questionImage;
     public string answer;
+    public string hint;
 }
 
 public enum GameStatus
