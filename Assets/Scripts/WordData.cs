@@ -9,6 +9,14 @@ public class WordData : MonoBehaviour
     public char wordValue;
 
     private Button buttonComponent;
+    public GameObject optionBtn;
+
+    
+
+    //public void EaseIn()
+    //{
+    //    optionBtn.transform.LeanScale(Vector2.zero, 3f).setEaseInBack();
+    //}
 
     private void Awake()
     {
@@ -23,6 +31,8 @@ public class WordData : MonoBehaviour
     {
         wordText.text = value + "";
         wordValue = value;
+        //EaseIn();
+        //wordanimation.animate.EaseIn();
     }
 
     private void WordSelected()

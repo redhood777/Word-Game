@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class animation : MonoBehaviour
+public class wordanimation : MonoBehaviour
 {
-    public Button optionBtn;
+    public static wordanimation animate;
+    public Button wordButton;
 
     public void EaseIn()
     {
-        optionBtn.transform.LeanScale(Vector2.zero, 3f).setEaseInBack();
+        wordButton.transform.LeanScale(Vector2.zero, 0.1f).setEaseInBack();
     }
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        wordButton.GetComponent<Button>();
     }
 
     // Update is called once per frame

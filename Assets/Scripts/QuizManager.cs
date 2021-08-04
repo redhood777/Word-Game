@@ -42,6 +42,8 @@ public class QuizManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //wordanimation.animate.EaseIn();
+
         selectedWordsIndex = new List<int>();           //create a new list at start
         SetQuestion();                                  //set question
     }
@@ -114,11 +116,18 @@ public class QuizManager : MonoBehaviour
     /// <param name="value"></param>
     public void SelectedOption(WordData value)
     {
+
         //if gameStatus is next or currentAnswerIndex is more or equal to answerWord length
         if (gameStatus == GameStatus.Next || currentAnswerIndex >= answerWord.Length) return;
 
+       
         selectedWordsIndex.Add(value.transform.GetSiblingIndex()); //add the child index to selectedWordsIndex list
-        value.gameObject.SetActive(false); //deactivate options object
+        value.transform.LeanScale(Vector2.zero, 1f).setEaseInBack();
+        StartCoroutine(deactivativebutton (value));
+
+        //corutine for animation done below
+       
+        //value.gameObject.SetActive(false); //deactivate options object
         answerWordList[currentAnswerIndex].SetWord(value.wordValue); //set the answer word list
 
         currentAnswerIndex++;   //increase currentAnswerIndex
@@ -162,13 +171,21 @@ public class QuizManager : MonoBehaviour
             }
         }
     }
-
+    IEnumerator deactivativebutton(WordData value)
+    {
+        yield return new WaitForSeconds(1);
+        //value.gameObject.SetActive(false);
+    }
     public void ResetLastWord()
     {
         if (selectedWordsIndex.Count > 0)
         {
             int index = selectedWordsIndex[selectedWordsIndex.Count - 1];
             optionsWordList[index].gameObject.SetActive(true);
+            optionsWordList[index].gameObject.GetComponent<RectTransform>().localScale  = new Vector3( 1f, 1f, 1f);
+
+            transform.LeanScale(new Vector2(1f, 1f), 1f).setEaseInBack();
+            //transform.LeanScale(Vector2.zero, 0.1f).setEaseOutBack();
             selectedWordsIndex.RemoveAt(selectedWordsIndex.Count - 1);
 
             currentAnswerIndex--;
