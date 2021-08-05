@@ -36,6 +36,8 @@ public class QuizManager : MonoBehaviour
     [Header("UI Image")]
     public Image greenImage;
     public Image redImage;
+
+    public Button resetBtn;
     private void Awake()
     {
         if (instance == null)
@@ -114,8 +116,15 @@ public class QuizManager : MonoBehaviour
 
         }
 
+
+
         currentAnswerIndex = 0;
         currentHintIndex = 0;
+
+        if (redImage.enabled)
+        {
+            redImage.enabled = false;
+        }
     }
 
     /// <summary>
@@ -130,7 +139,7 @@ public class QuizManager : MonoBehaviour
 
        
         selectedWordsIndex.Add(value.transform.GetSiblingIndex()); //add the child index to selectedWordsIndex list
-        value.transform.LeanScale(Vector2.zero, 1f).setEaseInBack();
+        value.transform.LeanScale(Vector2.zero, 0.3f).setEaseInBack();
         StartCoroutine(deactivativebutton (value));
 
         //corutine for animation done below
@@ -140,6 +149,10 @@ public class QuizManager : MonoBehaviour
 
         currentAnswerIndex++;   //increase currentAnswerIndex
         currentHintIndex++;
+        if (currentAnswerIndex > 0)
+        {
+            resetBtn.interactable = true;
+        }
 
         //if currentAnswerIndex is equal to answerWord length
         if (currentAnswerIndex == answerWord.Length)
@@ -170,7 +183,7 @@ public class QuizManager : MonoBehaviour
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
                    
-                    Invoke("SetQuestion", 2f); //go to next question
+                    Invoke("SetQuestion", 1f); //go to next question
                 }
                 else
                 {
@@ -182,7 +195,7 @@ public class QuizManager : MonoBehaviour
     }
     IEnumerator deactivativebutton(WordData value)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         //value.gameObject.SetActive(false);
     }
     public void ResetLastWord()
@@ -198,6 +211,13 @@ public class QuizManager : MonoBehaviour
             selectedWordsIndex.RemoveAt(selectedWordsIndex.Count - 1);
 
             currentAnswerIndex--;
+
+            if (currentAnswerIndex ==0)
+            {
+                resetBtn.interactable = false;
+            }
+           
+
             answerWordList[currentAnswerIndex].SetWord('_');
         }
 
@@ -210,7 +230,7 @@ public class QuizManager : MonoBehaviour
 
     public void ShowHint()
     {
-       Hint_txt.text = questionDataScriptable.questions[currentQuestionIndex].answer;
+       Hint_txt.text = questionDataScriptable.questions[currentQuestionIndex].hint;
 
     }
 

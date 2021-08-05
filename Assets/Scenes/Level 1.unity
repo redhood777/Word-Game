@@ -4132,6 +4132,7 @@ MonoBehaviour:
   Hint_txt: {fileID: 1622981663}
   greenImage: {fileID: 882491363}
   redImage: {fileID: 1736941461}
+  resetBtn: {fileID: 965226465}
 --- !u!1 &1736941459
 GameObject:
   m_ObjectHideFlags: 0
