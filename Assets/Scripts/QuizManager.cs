@@ -30,8 +30,8 @@ public class QuizManager : MonoBehaviour
 
     public Text Hint_txt;  // Text  to Show Hint;
 
-
-
+    public Text scoretext;
+    public int score;
 
     [Header("UI Image")]
     public Image greenImage;
@@ -162,6 +162,8 @@ public class QuizManager : MonoBehaviour
             if (correctAnswer)
             {
                 Debug.Log("Correct Answer");
+                score = score + 50;
+                scoretext.text = "Score: " + score;
                 greenImage.enabled = true;
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
