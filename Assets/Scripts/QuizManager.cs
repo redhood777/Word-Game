@@ -121,6 +121,12 @@ public class QuizManager : MonoBehaviour
         currentAnswerIndex = 0;
         currentHintIndex = 0;
 
+        if (currentAnswerIndex == 0)
+        {
+            resetBtn.interactable = false;
+        }
+
+
         if (redImage.enabled)
         {
             redImage.enabled = false;
