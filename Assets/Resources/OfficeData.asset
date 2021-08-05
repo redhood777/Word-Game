@@ -15,23 +15,34 @@ MonoBehaviour:
   questions:
   - questionImage: {fileID: 21300000, guid: e1cd96dd2e28a4ccf98b4e3d1a84edeb, type: 3}
     answer: agreement
+    hint: Agreement
   - questionImage: {fileID: 21300000, guid: 7ef63ceebadf043aea96ed7e1a9da1f9, type: 3}
     answer: budget
+    hint: budget
   - questionImage: {fileID: 21300000, guid: 58163d55276e14c53a06e2ecc3643259, type: 3}
     answer: cancelled
+    hint: cancelled
   - questionImage: {fileID: 21300000, guid: f3c0ff59c4b944669acc24e1ae0d5329, type: 3}
     answer: efficiently
+    hint: efficiently
   - questionImage: {fileID: 21300000, guid: a8555270b439e4c6b8131f7d0d4fed1f, type: 3}
     answer: emergency
+    hint: efficiently
   - questionImage: {fileID: 21300000, guid: 2126ffb3488f041c5a9aa4d3c0ab7e5c, type: 3}
     answer: experience
+    hint: efficiently
   - questionImage: {fileID: 21300000, guid: 5fb2be14631d147d283c542f689b4ddf, type: 3}
     answer: greeting
+    hint: greeting
   - questionImage: {fileID: 21300000, guid: e8a3df81398094da7bd99d805abbcc42, type: 3}
     answer: management
+    hint: management
   - questionImage: {fileID: 21300000, guid: 3e5e065d0ffe54e48baf44ba497743e7, type: 3}
     answer: postpone
+    hint: management
   - questionImage: {fileID: 21300000, guid: ed06ce370a4d946b4b45d2177ab0b976, type: 3}
     answer: schedule
+    hint: management
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: organization
+    hint: management
