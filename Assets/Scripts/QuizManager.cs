@@ -25,6 +25,17 @@ public class QuizManager : MonoBehaviour
     private bool correctAnswer = true;                      //bool to decide if answer is correct or not
     private string answerWord;                              //string to store answer of current question
 
+
+    private int currentHintIndex = 0; // index to keep track for Hint;
+
+    public Text Hint_txt;  // Text  to Show Hint;
+
+
+
+
+    [Header("UI Image")]
+    public Image greenImage;
+    public Image redImage;
     private void Awake()
     {
         if (instance == null)
@@ -43,6 +54,7 @@ public class QuizManager : MonoBehaviour
     void SetQuestion()
     {
         gameStatus = GameStatus.Playing;                //set GameStatus to playing 
+        greenImage.enabled = false;
 
         //set the answerWord string variable
         answerWord = questionDataScriptable.questions[currentQuestionIndex].answer;
@@ -99,6 +111,7 @@ public class QuizManager : MonoBehaviour
         }
 
         currentAnswerIndex = 0;
+        currentHintIndex = 0;
     }
 
     /// <summary>
@@ -115,6 +128,7 @@ public class QuizManager : MonoBehaviour
         answerWordList[currentAnswerIndex].SetWord(value.wordValue); //set the answer word list
 
         currentAnswerIndex++;   //increase currentAnswerIndex
+        currentHintIndex++;
 
         //if currentAnswerIndex is equal to answerWord length
         if (currentAnswerIndex == answerWord.Length)
@@ -126,8 +140,10 @@ public class QuizManager : MonoBehaviour
                 //if answerWord[i] is not same as answerWordList[i].wordValue
                 if (char.ToUpper(answerWord[i]) != char.ToUpper(answerWordList[i].wordValue))
                 {
+                    redImage.enabled = true;
                     correctAnswer = false; //set it false
                     break; //and break from the loop
+                    
                 }
             }
 
@@ -135,12 +151,14 @@ public class QuizManager : MonoBehaviour
             if (correctAnswer)
             {
                 Debug.Log("Correct Answer");
+                greenImage.enabled = true;
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
 
                 //if currentQuestionIndex is less that total available questions
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
+                   
                     Invoke("SetQuestion", 0.5f); //go to next question
                 }
                 else
@@ -163,15 +181,32 @@ public class QuizManager : MonoBehaviour
             currentAnswerIndex--;
             answerWordList[currentAnswerIndex].SetWord('_');
         }
+
+        if(redImage.enabled)
+        {
+            redImage.enabled = false;
+        }
+    }
+
+
+    public void ShowHint()
+    {
+       Hint_txt.text = questionDataScriptable.questions[currentQuestionIndex].answer;
+
     }
 
 }
+
+
+
+
 
 [System.Serializable]
 public class QuestionData
 {
     public Sprite questionImage;
     public string answer;
+    public string hint;
 }
 
 public enum GameStatus
