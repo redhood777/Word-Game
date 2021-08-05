@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922f77ebd5691284ab4c37739295fac7, type: 3}
   m_Name: SentenceData
   m_EditorClassIdentifier: 
-  sentences: []
+  sentences:
+  - This is a scentence
+  - London Bridge is falling Down
+  - I own a cat
+  - Fireworks are sometimes very scary to look at
+  - I want to go to the zoo
