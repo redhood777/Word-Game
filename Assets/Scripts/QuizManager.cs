@@ -105,6 +105,8 @@ public class QuizManager : MonoBehaviour
         for (int i = 0; i < optionsWordList.Length; i++)
         {
             optionsWordList[i].gameObject.SetActive(true);
+            optionsWordList[i].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
+
         }
 
         currentAnswerIndex = 0;
