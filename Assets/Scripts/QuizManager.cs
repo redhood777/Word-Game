@@ -170,7 +170,7 @@ public class QuizManager : MonoBehaviour
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
                    
-                    Invoke("SetQuestion", 0.5f); //go to next question
+                    Invoke("SetQuestion", 2f); //go to next question
                 }
                 else
                 {
@@ -193,7 +193,7 @@ public class QuizManager : MonoBehaviour
             optionsWordList[index].gameObject.SetActive(true);
             optionsWordList[index].gameObject.GetComponent<RectTransform>().localScale  = new Vector3( 1f, 1f, 1f);
 
-            transform.LeanScale(new Vector2(1f, 1f), 1f).setEaseInBack();
+            transform.LeanScale(new Vector2(1f, 1f), 0.7f).setEaseInBack();
             //transform.LeanScale(Vector2.zero, 0.1f).setEaseOutBack();
             selectedWordsIndex.RemoveAt(selectedWordsIndex.Count - 1);
 
