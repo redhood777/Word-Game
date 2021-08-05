@@ -101,6 +101,9 @@ public class ScrambleScentence : MonoBehaviour
         {
             child.gameObject.SetActive(true);
         }
+
+        correctAnswerText.GetComponent<Text>().text = " ";
+
     }
 
     public void SubmitAnswer()
@@ -112,12 +115,13 @@ public class ScrambleScentence : MonoBehaviour
             answer = answer + tmp;
             tmp = string.Empty;
         }
-        Debug.Log(answerSentence);
-        Debug.Log(answer);
+        //Debug.Log(answerSentence);
+        //Debug.Log(answer);
 
         if (answer == answerSentence)
         {
             correctAnswerText.GetComponent<Text>().text = "Correct Answer";
+            Invoke("NewSentence", 1f);
         }
         else
         {
@@ -125,4 +129,31 @@ public class ScrambleScentence : MonoBehaviour
         }
     }
 
+    public void NewSentence()
+    {
+        correctAnswerText.GetComponent<Text>().text = " ";
+
+        string newSentence = sentences[Random.Range(0, sentences.Count)];
+        while(newSentence == sentence)
+        {
+            newSentence = sentences[Random.Range(0, sentences.Count)];
+        }
+
+        foreach (Transform child in answerPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Transform child in optionsPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        answerSentence = newSentence + " ";
+        Debug.Log(answerSentence);
+        SplitSentence(newSentence);
+        RandomizeArray(words);
+
+
+    }
 }
