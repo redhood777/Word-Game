@@ -23,6 +23,9 @@ public class ScrambleScentence : MonoBehaviour
     private SentenceDataScriptable sentenceDataScriptable;
     public GameObject correctAnswerText;
 
+    public Sprite correctAnswer;
+    public Sprite wrongAnswer;
+
     private void Awake()
     {
         if (instance == null)
@@ -77,7 +80,7 @@ public class ScrambleScentence : MonoBehaviour
             wordButton.GetComponentInChildren<Text>().text = sentenceArray[i];
         }
 
-        optionsPanel.GetComponent<VerticalLayoutGroup>().childScaleHeight = false;
+        //optionsPanel.GetComponent<VerticalLayoutGroup>().childScaleHeight = false;
 
     }
 
