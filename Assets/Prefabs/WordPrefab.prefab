@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 6117475963737123553}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.33100003, y: 0.19000001}
+  m_AnchorMax: {x: 0.76373667, y: 0.74}
+  m_AnchoredPosition: {x: -2, y: -2.9}
+  m_SizeDelta: {x: 19.1997, y: 9.766922}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6117475963046128397
 CanvasRenderer:
@@ -65,11 +65,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 6e402077d32f84daa83a905b4eccde2b, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 5
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 6117475963737123554}
   - component: {fileID: 3837193635699209556}
   - component: {fileID: 494872902519598929}
+  - component: {fileID: 333404428}
   m_Layer: 5
   m_Name: WordPrefab
   m_TagString: Untagged
@@ -145,7 +146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 38b98a8b8502847ccb9a203a956de752, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89dee0ef52ae440d8bd00329c400a09e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 333404428}
         m_MethodName: EaseIn
         m_Mode: 1
         m_Arguments:
@@ -224,3 +225,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &333404428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117475963737123552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02103663879d34fa99e7316cbfbb3fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordButton: {fileID: 494872902519598929}

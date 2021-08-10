@@ -18,7 +18,7 @@ public class QuizManager : MonoBehaviour
 
 
     private GameStatus gameStatus = GameStatus.Playing;     //to keep track of game status
-    private char[] wordsArray = new char[12];               //array which store char of each options
+    private char[] wordsArray = new char[15];               //array which store char of each options
 
     private List<int> selectedWordsIndex;                   //list which keep track of option word index w.r.t answer word index
     private int currentAnswerIndex = 0, currentQuestionIndex = 0;   //index to keep track of current answer and current question
@@ -30,8 +30,8 @@ public class QuizManager : MonoBehaviour
 
     public Text Hint_txt;  // Text  to Show Hint;
 
-
-
+    public Text scoretext;
+    public int score;
 
     [Header("UI Image")]
     public Image greenImage;
@@ -99,7 +99,7 @@ public class QuizManager : MonoBehaviour
         for (int i = 0; i < answerWordList.Length; i++)
         {
             answerWordList[i].gameObject.SetActive(true);
-            answerWordList[i].SetWord('_');
+            answerWordList[i].SetWord(' ');
         }
 
         //Now deactivate the unwanted answerWordList gameobject (object more than answer string length)
@@ -181,6 +181,8 @@ public class QuizManager : MonoBehaviour
             if (correctAnswer)
             {
                 Debug.Log("Correct Answer");
+                score = score + 50;
+                scoretext.text = "" + score;
                 greenImage.enabled = true;
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
