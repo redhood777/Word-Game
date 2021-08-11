@@ -13,36 +13,39 @@ MonoBehaviour:
   m_Name: OfficeData
   m_EditorClassIdentifier: 
   questions:
-  - questionImage: {fileID: 21300000, guid: e1cd96dd2e28a4ccf98b4e3d1a84edeb, type: 3}
+  - questionImage: {fileID: 21300000, guid: 19afb646502f547ebabba08679b27fef, type: 3}
     answer: agreement
-    hint: this is a hint
+    hint: 'A negotiated and typically legally binding arrangement between parties
+      as to a course of action. '
   - questionImage: {fileID: 21300000, guid: 7ef63ceebadf043aea96ed7e1a9da1f9, type: 3}
     answer: budget
-    hint: budget
-  - questionImage: {fileID: 21300000, guid: 58163d55276e14c53a06e2ecc3643259, type: 3}
+    hint: A financial plan for a defined period
+  - questionImage: {fileID: 21300000, guid: d59512925e10a45f09f0099f3d014d4f, type: 3}
     answer: cancelled
-    hint: cancelled
-  - questionImage: {fileID: 21300000, guid: f3c0ff59c4b944669acc24e1ae0d5329, type: 3}
+    hint: Decide or announce that a planned event will not take place.
+  - questionImage: {fileID: 21300000, guid: 76f0f240e8fe34e92a3f7614ed82cfe1, type: 3}
     answer: efficiently
-    hint: efficiently
-  - questionImage: {fileID: 21300000, guid: a8555270b439e4c6b8131f7d0d4fed1f, type: 3}
+    hint: The state or quality of conducting anything in a precise and accurate manner.
+  - questionImage: {fileID: 21300000, guid: c14d6368fb1f240f6a5475ceac545df4, type: 3}
     answer: emergency
-    hint: efficiently
-  - questionImage: {fileID: 21300000, guid: 2126ffb3488f041c5a9aa4d3c0ab7e5c, type: 3}
+    hint: A serious, unexpected, and often dangerous situation requiring immediate
+      action.
+  - questionImage: {fileID: 21300000, guid: 17b1af188bea3427698cfa03d395e682, type: 3}
     answer: experience
-    hint: efficiently
-  - questionImage: {fileID: 21300000, guid: 5fb2be14631d147d283c542f689b4ddf, type: 3}
+    hint: A vast amount knowledge in a certain field of work or study.
+  - questionImage: {fileID: 21300000, guid: 166aaf18a2ef74fe5b532f50dd2d7680, type: 3}
     answer: greeting
-    hint: greeting
-  - questionImage: {fileID: 21300000, guid: e8a3df81398094da7bd99d805abbcc42, type: 3}
+    hint: A polite word or sign of welcome or recognition.
+  - questionImage: {fileID: 21300000, guid: 78a5ae44d211c4136ab64b6178b72d69, type: 3}
     answer: management
-    hint: management
-  - questionImage: {fileID: 21300000, guid: 3e5e065d0ffe54e48baf44ba497743e7, type: 3}
+    hint: The process of dealing with or controlling things or people.
+  - questionImage: {fileID: 21300000, guid: 699e29a88e6e341ee8b0c87e5d5c20ce, type: 3}
     answer: postpone
-    hint: management
-  - questionImage: {fileID: 21300000, guid: ed06ce370a4d946b4b45d2177ab0b976, type: 3}
-    answer: schedule
-    hint: management
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    hint: 'Cause or arrange for (something) to take place at a time later than that
+      first scheduled. '
+  - questionImage: {fileID: 21300000, guid: b1f6006b9823c49fbaa43360becbbb65, type: 3}
+    answer: recommended
+    hint: Advised or suggested as good or suitable.
+  - questionImage: {fileID: 21300000, guid: 3b2bd8cd580184d91a3a13ff5942f8ab, type: 3}
     answer: organization
-    hint: management
+    hint: The process of defining and grouping things or activities.
