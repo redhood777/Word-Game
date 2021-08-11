@@ -226,7 +226,7 @@ public class QuizManager : MonoBehaviour
             }
            
 
-            answerWordList[currentAnswerIndex].SetWord('_');
+            answerWordList[currentAnswerIndex].SetWord(' ');
         }
 
         if(redImage.enabled)
