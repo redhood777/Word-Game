@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class GetData : MonoBehaviour
 {
-    public Text info_text;
+    public InputField info_text;
 
 
 
     private void Start()
     {
-
+        info_text = GameObject.Find("OutputArea").GetComponent<InputField>();    
         GameObject.Find("GetButton").GetComponent<Button>().onClick.AddListener(GetInfo);
     }
 
