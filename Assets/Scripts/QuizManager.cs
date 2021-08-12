@@ -143,6 +143,11 @@ public class QuizManager : MonoBehaviour
         //if gameStatus is next or currentAnswerIndex is more or equal to answerWord length
         if (gameStatus == GameStatus.Next || currentAnswerIndex >= answerWord.Length) return;
 
+
+       
+
+
+
        
         selectedWordsIndex.Add(value.transform.GetSiblingIndex()); //add the child index to selectedWordsIndex list
         value.transform.LeanScale(Vector2.zero, 0.3f).setEaseInBack();
@@ -152,9 +157,40 @@ public class QuizManager : MonoBehaviour
        
         //value.gameObject.SetActive(false); //deactivate options object
         answerWordList[currentAnswerIndex].SetWord(value.wordValue); //set the answer word list
+        //Debug.Log(value.wordValue);
+      //  Debug.Log("S" + currentAnswerIndex.ToString());
+
+
+        for (int i = 0; i <=
+            currentAnswerIndex; i++)
+        {
+            Debug.Log("QQ------"+ char.ToUpper(answerWord[i]));  // Right Answer
+            Debug.Log("WW-----"+ char.ToUpper(answerWordList[i].wordValue)); ///current answer
+
+
+            if (char.ToUpper(answerWord[i]) != char.ToUpper(answerWordList[i].wordValue))
+            {
+
+                StartCoroutine(WrongAswer());
+                
+                // Debug.Log("Wrong Answer");
+            }
+            else if (char.ToUpper(answerWord[i]) == char.ToUpper(answerWordList[i].wordValue))
+            {
+                StartCoroutine(RightAnswer());
+                //Debug.Log("Right Answer");
+            }
+        }
+
+      
+
+
+
+
+
 
         currentAnswerIndex++;   //increase currentAnswerIndex
-        currentHintIndex++;
+        currentHintIndex++;    // increase Hint Index;
         if (currentAnswerIndex > 0)
         {
             resetBtn.interactable = true;
@@ -226,7 +262,7 @@ public class QuizManager : MonoBehaviour
             }
            
 
-            answerWordList[currentAnswerIndex].SetWord('_');
+            answerWordList[currentAnswerIndex].SetWord(' ');
         }
 
         if(redImage.enabled)
@@ -242,7 +278,26 @@ public class QuizManager : MonoBehaviour
 
     }
 
+
+    IEnumerator RightAnswer()
+    {
+        greenImage.enabled = true;
+        yield return new WaitForSeconds(0.3f);
+        greenImage.enabled = false;
+    }
+
+    IEnumerator WrongAswer()
+    {
+        redImage.enabled = true;
+        yield return new WaitForSeconds(0.3f);
+        redImage.enabled = false;
+    }
+
+
 }
+
+
+
 
 
 
