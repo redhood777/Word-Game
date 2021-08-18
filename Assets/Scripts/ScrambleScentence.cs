@@ -8,6 +8,8 @@ public class ScrambleScentence : MonoBehaviour
     public static ScrambleScentence instance;
 
     [HideInInspector]
+    int score = 0;
+    int question = 1;
     string sentence;
     public string answerSentence;
     string[] words;
@@ -18,10 +20,20 @@ public class ScrambleScentence : MonoBehaviour
     public GameObject buttonPrefab;
    // public GameObject resetButton;
    // public GameObject submitButton;
+    
     public Text buttonText;
+    public Text scoreText;
+    public Text questionNumber;
+
+
     [SerializeField]
     private SentenceDataScriptable sentenceDataScriptable;
     public GameObject correctAnswerText;
+
+    public Sprite correctAnswer;
+    public Sprite wrongAnswer;
+
+
 
     private void Awake()
     {
@@ -33,6 +45,8 @@ public class ScrambleScentence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreText.text = "0";
+        questionNumber.text = "Q.1";
         sentences = sentenceDataScriptable.sentences;
         sentence = sentences[Random.Range(0, sentences.Count)];
         answerSentence = sentence + " ";
@@ -77,7 +91,7 @@ public class ScrambleScentence : MonoBehaviour
             wordButton.GetComponentInChildren<Text>().text = sentenceArray[i];
         }
 
-        optionsPanel.GetComponent<VerticalLayoutGroup>().childScaleHeight = false;
+        //optionsPanel.GetComponent<VerticalLayoutGroup>().childScaleHeight = false;
 
     }
 
@@ -154,6 +168,11 @@ public class ScrambleScentence : MonoBehaviour
         SplitSentence(newSentence);
         RandomizeArray(words);
 
+        score += 10;
+        question += 1;
+
+        scoreText.text = score.ToString();
+        questionNumber.text = "Q." + question.ToString();
 
     }
 }
