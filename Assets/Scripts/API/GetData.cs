@@ -32,6 +32,11 @@ public class GetData : MonoBehaviour
                 info_text.text = request.error;
             else
                 info_text.text = request.downloadHandler.text;
+
+
+
+           
+
         }
 
     }
