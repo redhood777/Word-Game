@@ -13,8 +13,37 @@ MonoBehaviour:
   m_Name: SentenceData
   m_EditorClassIdentifier: 
   sentences:
-  - This is a scentence
-  - London Bridge is falling Down
-  - I own a cat
-  - Fireworks are sometimes very scary to look at
-  - I want to go to the zoo
+  - I will look at this document after lunch
+  - Could you please share your screen?
+  - Am I audible?
+  - There is a meeting at 12 pm
+  - I would like to cancel my leave application
+  - I have an appointment with the doctor
+  - Can you see my screen?
+  - I have applied for leave on Tuesday
+  - She is not in town on Monday
+  - He has taken the day off
+  - The clients would like to see the presentation
+  - I require some help in this area
+  - Is the meeting over
+  - 'There is an error in this document '
+  - 'I voted for the wrong option accidentally '
+  - I am handing over the controls of the meeting to you
+  - Please drop a message when you are ready
+  - 'I have created a folder with all the documents '
+  - Can I proceed with this design?
+  - Does he have to work on this today?
+  - Can I get your approval on this?
+  - 'There is an issue with my laptop. '
+  - Are there any challenges that you are facing?
+  - How can I help you?
+  - Has he spoken to you about the changes?
+  - I have been working with this company for the past 2 years
+  - I like being a part of this team
+  - The clients have agreed to a meeting on Friday
+  - I am training to be the team manager
+  - I am not working on anything new at the moment
+  - She is on leave today
+  - 'I am reading an interesting book. '
+  - I will be able to give you the completed document by next week
+  - I am looking for the documents
