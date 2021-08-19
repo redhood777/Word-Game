@@ -38,33 +38,48 @@ public class QuizManager : MonoBehaviour
     public Image redImage;
 
     public Button resetBtn;
+
+    
+
+    
     private void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Destroy(this.gameObject);
+
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //wordanimation.animate.EaseIn();
+        //wordanimation.animate.EaseIn(); 
 
+        
+        
         selectedWordsIndex = new List<int>();           //create a new list at start
         SetQuestion();                                  //set question
     }
 
     void SetQuestion()
     {
+        int num = UnityEngine.Random.Range(0, 10); 
+
+
+
         gameStatus = GameStatus.Playing;                //set GameStatus to playing 
         greenImage.enabled = false;
 
         //set the answerWord string variable
-        answerWord = questionDataScriptable.questions[currentQuestionIndex].answer;
+        answerWord = questionDataScriptable.questions[num].answer;
         //set the image of question
-        questionImage.sprite = questionDataScriptable.questions[currentQuestionIndex].questionImage;
-            
+        questionImage.sprite = questionDataScriptable.questions[num].questionImage;
+
+        Hint_txt.text = questionDataScriptable.questions[num].hint;
+
+
         ResetQuestion();                               //reset the answers and options value to orignal     
 
         selectedWordsIndex.Clear();                     //clear the list for new question
@@ -226,7 +241,7 @@ public class QuizManager : MonoBehaviour
                 //if currentQuestionIndex is less that total available questions
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
-                   
+                    //StartCoroutine(RandomQuestion());
                     Invoke("SetQuestion", 1f); //go to next question
                 }
                 else
@@ -237,6 +252,9 @@ public class QuizManager : MonoBehaviour
             }
         }
     }
+
+    
+
     IEnumerator deactivativebutton(WordData value)
     {
         yield return new WaitForSeconds(0.1f);
@@ -274,8 +292,7 @@ public class QuizManager : MonoBehaviour
 
     public void ShowHint()
     {
-       Hint_txt.text = questionDataScriptable.questions[currentQuestionIndex].hint;
-
+      
     }
 
 
