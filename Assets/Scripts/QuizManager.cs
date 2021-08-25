@@ -41,6 +41,8 @@ public class QuizManager : MonoBehaviour
 
     public Button resetBtn;
 
+    public GameObject correctAnsImage;
+    public GameObject wrongAnsImage;
     
 
     
@@ -235,6 +237,7 @@ public class QuizManager : MonoBehaviour
             {
                 Debug.Log("Correct Answer");
                 score = score + 50;
+                StartCoroutine(correctAnsImageEnable());
                 scoretext.text = "" + score;
 
                 questionNo = questionNo + 1 ;
@@ -300,12 +303,26 @@ public class QuizManager : MonoBehaviour
       
     }
 
+    IEnumerator correctAnsImageEnable()
+    {
+        correctAnsImage.SetActive(true);
+        yield return new WaitForSeconds(1);
+        correctAnsImage.SetActive(false);
+    }
+    IEnumerator WrongAnsImageEnable()
+    {
+        wrongAnsImage.SetActive(true);
+        yield return new WaitForSeconds(1);
+        wrongAnsImage.SetActive(false);
+    }
 
     IEnumerator RightAnswer()
     {
+        
         greenImage.enabled = true;
         yield return new WaitForSeconds(0.3f);
         greenImage.enabled = false;
+       
     }
 
     IEnumerator WrongAswer()
