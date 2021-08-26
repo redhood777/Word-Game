@@ -1871,7 +1871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1643363365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1968,7 +1968,7 @@ MonoBehaviour:
   buttonText: {fileID: 0}
   scoreText: {fileID: 1361798825}
   questionNumber: {fileID: 1209573741}
-  maxQuestionValue: 20
+  maxQuestionValue: 10
   currentQuestionValue: 1
   correctAnswerValue: 0
   correctAnswerText: {fileID: 214867698}

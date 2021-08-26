@@ -17,9 +17,9 @@ public class PauseScript : MonoBehaviour
         
     }
 
-    public void RestartLevel()
+    public void RestartLevel(int n)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(n);
 
     }
 }
