@@ -18,6 +18,8 @@ public class ScrambleScentence : MonoBehaviour
     public GameObject optionsPanel;
     public GameObject answerPanel;
     public GameObject buttonPrefab;
+    public GameObject gameEndScreen;
+    public GameObject loadingScreen;
    // public GameObject resetButton;
    // public GameObject submitButton;
     
@@ -26,14 +28,15 @@ public class ScrambleScentence : MonoBehaviour
     public Text questionNumber;
 
 
-    [SerializeField]
-    private SentenceDataScriptable sentenceDataScriptable;
+    public int maxQuestionValue;
+    public int currentQuestionValue ;
+
+    public int correctAnswerValue;
     public GameObject correctAnswerText;
 
-    public Sprite correctAnswer;
-    public Sprite wrongAnswer;
-
-
+    [SerializeField]
+    private SentenceDataScriptable sentenceDataScriptable;
+    public GameObject finalScoreText;
 
     private void Awake()
     {
@@ -45,8 +48,9 @@ public class ScrambleScentence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameLoaded();
         scoreText.text = "0";
-        questionNumber.text = "Q.1";
+        questionNumber.text = "Q.1/"+ maxQuestionValue.ToString();
         sentences = sentenceDataScriptable.sentences;
         sentence = sentences[Random.Range(0, sentences.Count)];
         answerSentence = sentence + " ";
@@ -61,7 +65,7 @@ public class ScrambleScentence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void SplitSentence(string sentence)
@@ -88,7 +92,7 @@ public class ScrambleScentence : MonoBehaviour
         for (int i = 0; i < sentenceArray.Length; i++)
         {
             GameObject wordButton = Instantiate(buttonPrefab, optionsPanel.transform);
-            wordButton.GetComponentInChildren<Text>().text = sentenceArray[i];
+            wordButton.GetComponentInChildren<Text>().text = sentenceArray[i];          
         }
 
         //optionsPanel.GetComponent<VerticalLayoutGroup>().childScaleHeight = false;
@@ -122,6 +126,12 @@ public class ScrambleScentence : MonoBehaviour
 
     public void SubmitAnswer()
     {
+        if (currentQuestionValue >= maxQuestionValue)
+        {
+            Debug.Log("GameEnd Called");
+            GameEnd();
+        }
+        currentQuestionValue += 1;
         string answer = string.Empty;
         foreach (Transform child in answerPanel.transform)
         {
@@ -135,11 +145,23 @@ public class ScrambleScentence : MonoBehaviour
         if (answer == answerSentence)
         {
             correctAnswerText.GetComponent<Text>().text = "Correct Answer";
+            score += 10;
+            scoreText.text = score.ToString();
+            correctAnswerValue += 1;
+
             Invoke("NewSentence", 1f);
         }
         else
         {
-            correctAnswerText.GetComponent<Text>().text = "Wrong Answer";
+            if (answerPanel.transform.childCount == 0)
+            {
+                correctAnswerText.GetComponent<Text>().text = "No words selected";
+            }
+            else
+            {
+                correctAnswerText.GetComponent<Text>().text = "Wrong Answer";
+                Invoke("NewSentence", 1f);
+            }     
         }
     }
 
@@ -168,11 +190,27 @@ public class ScrambleScentence : MonoBehaviour
         SplitSentence(newSentence);
         RandomizeArray(words);
 
-        score += 10;
+        
         question += 1;
 
-        scoreText.text = score.ToString();
-        questionNumber.text = "Q." + question.ToString();
+        questionNumber.text = "Q." + question.ToString() +"/"+maxQuestionValue.ToString();
 
+    }
+
+    public void GameEnd()
+    {
+        gameEndScreen.SetActive(true);
+        finalScoreText.GetComponent<Text>().text = "Your Score : "+ correctAnswerValue.ToString() + "/" + maxQuestionValue.ToString();
+    }
+
+    public void GameLoaded()
+    {
+        StartCoroutine(RemoveAfterSeconds(2, loadingScreen));
+    }
+
+    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
+    {
+        yield return new WaitForSeconds(seconds);
+        obj.SetActive(false);
     }
 }
