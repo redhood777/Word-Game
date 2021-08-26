@@ -200,12 +200,12 @@ public class ScrambleScentence : MonoBehaviour
     public void GameEnd()
     {
         gameEndScreen.SetActive(true);
-        finalScoreText.GetComponent<Text>().text = correctAnswerValue.ToString() + "/" + maxQuestionValue.ToString();
+        finalScoreText.GetComponent<Text>().text = "Your Score : "+ correctAnswerValue.ToString() + "/" + maxQuestionValue.ToString();
     }
 
     public void GameLoaded()
     {
-        StartCoroutine(RemoveAfterSeconds(3, loadingScreen));
+        StartCoroutine(RemoveAfterSeconds(2, loadingScreen));
     }
 
     IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)

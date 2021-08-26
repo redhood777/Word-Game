@@ -20,5 +20,6 @@ public class PauseScript : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(0);
+
     }
 }
