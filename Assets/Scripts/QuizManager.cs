@@ -118,7 +118,7 @@ public class QuizManager : MonoBehaviour
         for (int i = 0; i < answerWordList.Length; i++)
         {
             answerWordList[i].gameObject.SetActive(true);
-            answerWordList[i].SetWord(' ');
+            answerWordList[i].SetWord('_');
         }
 
         //Now deactivate the unwanted answerWordList gameobject (object more than answer string length)
