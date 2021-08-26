@@ -30,11 +30,6 @@ public class ScrambleScentence : MonoBehaviour
     private SentenceDataScriptable sentenceDataScriptable;
     public GameObject correctAnswerText;
 
-    public Sprite correctAnswer;
-    public Sprite wrongAnswer;
-
-
-
     private void Awake()
     {
         if (instance == null)
@@ -88,7 +83,7 @@ public class ScrambleScentence : MonoBehaviour
         for (int i = 0; i < sentenceArray.Length; i++)
         {
             GameObject wordButton = Instantiate(buttonPrefab, optionsPanel.transform);
-            wordButton.GetComponentInChildren<Text>().text = sentenceArray[i];
+            wordButton.GetComponentInChildren<Text>().text = sentenceArray[i];          
         }
 
         //optionsPanel.GetComponent<VerticalLayoutGroup>().childScaleHeight = false;
@@ -122,6 +117,7 @@ public class ScrambleScentence : MonoBehaviour
 
     public void SubmitAnswer()
     {
+        
         string answer = string.Empty;
         foreach (Transform child in answerPanel.transform)
         {
@@ -139,7 +135,15 @@ public class ScrambleScentence : MonoBehaviour
         }
         else
         {
-            correctAnswerText.GetComponent<Text>().text = "Wrong Answer";
+            if (answerPanel.transform.childCount == 0)
+            {
+                correctAnswerText.GetComponent<Text>().text = "No words selected";
+            }
+            else
+            {
+                correctAnswerText.GetComponent<Text>().text = "Wrong Answer";
+                Invoke("NewSentence", 1f);
+            }     
         }
     }
 

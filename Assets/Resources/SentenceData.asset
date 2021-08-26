@@ -26,15 +26,15 @@ MonoBehaviour:
   - The clients would like to see the presentation
   - I require some help in this area
   - Is the meeting over
-  - 'There is an error in this document '
-  - 'I voted for the wrong option accidentally '
+  - There is an error in this document
+  - I voted for the wrong option accidentally
   - I am handing over the controls of the meeting to you
   - Please drop a message when you are ready
-  - 'I have created a folder with all the documents '
+  - I have created a folder with all the documents
   - Can I proceed with this design?
   - Does he have to work on this today?
   - Can I get your approval on this?
-  - 'There is an issue with my laptop. '
+  - There is an issue with my laptop.
   - Are there any challenges that you are facing?
   - How can I help you?
   - Has he spoken to you about the changes?
@@ -44,6 +44,6 @@ MonoBehaviour:
   - I am training to be the team manager
   - I am not working on anything new at the moment
   - She is on leave today
-  - 'I am reading an interesting book. '
+  - I am reading an interesting book.
   - I will be able to give you the completed document by next week
   - I am looking for the documents
