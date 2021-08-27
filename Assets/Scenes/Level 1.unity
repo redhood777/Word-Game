@@ -5458,7 +5458,7 @@ MonoBehaviour:
   scoretext: {fileID: 1329549214}
   questionNumber: {fileID: 1437988512}
   score: 0
-  questionNo: 0
+  questionNo: 1
   greenImage: {fileID: 882491363}
   redImage: {fileID: 1736941461}
   resetBtn: {fileID: 965226465}
@@ -5573,7 +5573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.065103106, y: 0.29412374}
   m_AnchorMax: {x: 0.3102758, y: 0.71400005}
-  m_AnchoredPosition: {x: 2.3796234, y: -0.2697754}
+  m_AnchoredPosition: {x: 2.3793793, y: -0.2697754}
   m_SizeDelta: {x: 6.9829254, y: 8.989822}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1745157102
