@@ -24,7 +24,7 @@ public class GetData : MonoBehaviour
     {
         info_text.text = "Loading...";
 
-        string uri = "https://dummy.restapiexample.com/api/v1/employees";
+        string uri = "https://192.168.1.81/api/verify_user_otp";
         using(UnityWebRequest request = UnityWebRequest.Get(uri))
         {
             yield return request.SendWebRequest();
