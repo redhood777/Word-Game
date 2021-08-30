@@ -6,13 +6,32 @@ using UnityEngine.UI;
 
 public class PostData : MonoBehaviour
 {
-    InputField outputArea;
-    public string email = "123@gmail.com", otp = "123456";
+    //InputField outputArea;
+
+    public InputField I_email;
+    public InputField I_otp;
+
+
+
+
+   
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+
+         
+
+    }
+
+
     void Start()
     {
-        outputArea = GameObject.Find("OutputArea").GetComponent<InputField>();
+       // outputArea = GameObject.Find("OutputArea").GetComponent<InputField>();
+        I_email = GameObject.Find("EMAIL").GetComponent<InputField>();
+        I_otp =   GameObject.Find("OTP").GetComponent<InputField>();
+
         GameObject.Find("PostButton").GetComponent<Button>().onClick.AddListener(SendData);
         
     }
@@ -21,17 +40,19 @@ public class PostData : MonoBehaviour
 
     IEnumerator PostData_Coroutine()
     {
-        outputArea.text = "Loading...";
+        //outputArea.text = "Loading...";
         string uri = "https://192.168.1.81/api/verify_user_otp";
         WWWForm form = new WWWForm();
-        form.AddField(email,otp);
+        form.AddField("I_email", "I_otp");
         using (UnityWebRequest request = UnityWebRequest.Post(uri,form))
         {
             yield return request.SendWebRequest();
             if (request.isNetworkError || request.isHttpError)
-                outputArea.text = request.error;
+                // outputArea.text = request.error;
+                Debug.Log(request.error);
             else
-                outputArea.text = request.downloadHandler.text;
+                // outputArea.text = request.downloadHandler.text;
+                Debug.Log("Api Send");
             // recall the api again he
 
         }
