@@ -308,7 +308,8 @@ public class QuizManager : MonoBehaviour
 
     public void ShowHint()
     {
-      
+        score = score - 10;
+        scoretext.text = score.ToString();
     }
 
     IEnumerator correctAnsImageEnable()
