@@ -244,7 +244,7 @@ public class QuizManager : MonoBehaviour
                 scoretext.text = "" + score;
 
                 questionNo = questionNo + 1 ;
-                questionNumber.text =  questionNo + "/11";
+                questionNumber.text =  questionNo + "/12";
                 greenImage.enabled = true;
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex

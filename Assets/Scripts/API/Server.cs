@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Server : MonoBehaviour
@@ -50,17 +51,14 @@ public class Server : MonoBehaviour
 		{
 			if (w.isDone)
 			{
-				if (w.text.Contains("error"))
+				if (w.text.Contains("Authenticated"))
 				{
-					errorMessages.text = "invalid username or password!";
-					Debug.Log("<color=red>" + w.text + "</color>");//error
+					SceneManager.LoadScene(1);
 				}
 				else
 				{
-					//open welcom panel
-					//welcomePanel.SetActive(true);
-					//user.text = username.text;
-					Debug.Log("<color=green>" + w.text + "</color>");//user exist
+					errorMessages.text = "invalid username or password!";
+					Debug.Log("<color=red>" + w.text + "</color>");
 				}
 			}
 		}
