@@ -24,6 +24,7 @@ public class WordData : MonoBehaviour
         if (buttonComponent)
         {
             buttonComponent.onClick.AddListener(() => WordSelected());
+            //buttonComponent.interactable = true;
         }
     }
 
@@ -39,5 +40,7 @@ public class WordData : MonoBehaviour
     {
         QuizManager.instance.SelectedOption(this);
     }
+
+    
     
 }

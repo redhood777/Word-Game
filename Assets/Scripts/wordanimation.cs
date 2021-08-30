@@ -13,12 +13,16 @@ public class wordanimation : MonoBehaviour
         wordButton.transform.LeanScale(Vector2.zero, 0.1f).setEaseInBack();
     }
 
-    
+    public void turnoffinteractible()
+    {
+        wordButton.interactable = false;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         wordButton.GetComponent<Button>();
+        //wordButton.interactable = true;
     }
 
     // Update is called once per frame

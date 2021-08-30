@@ -183,8 +183,8 @@ public class QuizManager : MonoBehaviour
         for (int i = 0; i <=
             currentAnswerIndex; i++)
         {
-            Debug.Log("QQ------"+ char.ToUpper(answerWord[i]));  // Right Answer
-            Debug.Log("WW-----"+ char.ToUpper(answerWordList[i].wordValue)); ///current answer
+            //Debug.Log("QQ------"+ char.ToUpper(answerWord[i]));  // Right Answer
+            //Debug.Log("WW-----"+ char.ToUpper(answerWordList[i].wordValue)); ///current answer
 
 
             if (char.ToUpper(answerWord[i]) != char.ToUpper(answerWordList[i].wordValue))
@@ -192,7 +192,7 @@ public class QuizManager : MonoBehaviour
 
                 StartCoroutine(WrongAswer());
                 
-                // Debug.Log("Wrong Answer");
+                 //Debug.Log("Wrong Answer");
             }
             else if (char.ToUpper(answerWord[i]) == char.ToUpper(answerWordList[i].wordValue))
             {
@@ -215,9 +215,12 @@ public class QuizManager : MonoBehaviour
             resetBtn.interactable = true;
         }
 
+        
+
         //if currentAnswerIndex is equal to answerWord length
         if (currentAnswerIndex == answerWord.Length)
         {
+            
             correctAnswer = true;   //default value
             //loop through answerWordList
             for (int i = 0; i < answerWord.Length; i++)
@@ -258,6 +261,11 @@ public class QuizManager : MonoBehaviour
                     gameComplete.SetActive(true);
                 }
             }
+
+            else
+            {
+                StartCoroutine(WrongAnsImageEnable());
+            }
         }
     }
 
@@ -288,7 +296,7 @@ public class QuizManager : MonoBehaviour
             }
            
 
-            answerWordList[currentAnswerIndex].SetWord(' ');
+            answerWordList[currentAnswerIndex].SetWord('_');
         }
 
         if(redImage.enabled)
@@ -314,6 +322,7 @@ public class QuizManager : MonoBehaviour
         wrongAnsImage.SetActive(true);
         yield return new WaitForSeconds(1);
         wrongAnsImage.SetActive(false);
+        ResetQuestion();
     }
 
     IEnumerator RightAnswer()
