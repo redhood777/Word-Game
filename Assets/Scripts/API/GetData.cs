@@ -23,20 +23,15 @@ public class GetData : MonoBehaviour
     IEnumerator GetData_Coroutine()
     {
         info_text.text = "Loading...";
-
-        string uri = "https://192.168.1.81/api/verify_user_otp";
-        using(UnityWebRequest request = UnityWebRequest.Get(uri))
+        //string uri = "https://pokeapi.co/api/v2/";
+        string uri = "http://192.168.1.81/api/verify_user_otp";
+        using (UnityWebRequest request = UnityWebRequest.Get(uri))
         {
             yield return request.SendWebRequest();
             if (request.isNetworkError || request.isHttpError)
                 info_text.text = request.error;
             else
                 info_text.text = request.downloadHandler.text;
-
-
-
-           
-
         }
 
     }
