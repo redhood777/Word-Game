@@ -31,6 +31,7 @@ public class QuizManager : MonoBehaviour
     public Text Hint_txt;  // Text  to Show Hint;
 
     public Text scoretext;
+    public Text FinalScore;
     public Text questionNumber;
     public int score;
     public int questionNo = 1;
@@ -56,6 +57,10 @@ public class QuizManager : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        FinalScore.text = score.ToString();
+    }
     // Start is called before the first frame update
     void Start()
     {

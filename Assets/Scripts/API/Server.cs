@@ -57,7 +57,7 @@ public class Server : MonoBehaviour
 				}
 				else
 				{
-					errorMessages.text = "Invalid username or password!";
+					StartCoroutine(disbleMessage());
 					Debug.Log("<color=red>" + w.text + "</color>");
 				}
 			}
@@ -67,5 +67,12 @@ public class Server : MonoBehaviour
 		//progressCircle.SetActive(false);
 
 		w.Dispose();
+
+		IEnumerator disbleMessage()
+        {
+			errorMessages.text = "Invalid username or OTP!";
+			yield return new WaitForSeconds(2f);
+			errorMessages.text = "";
+        }
 	}
 }
