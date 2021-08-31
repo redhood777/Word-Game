@@ -74,7 +74,7 @@ public class QuizManager : MonoBehaviour
 
     void SetQuestion()
     {
-        int num = UnityEngine.Random.Range(0, 10); 
+       // int currentQuestionIndex = UnityEngine.Random.Range(0, 10); 
 
 
 
@@ -82,11 +82,11 @@ public class QuizManager : MonoBehaviour
         greenImage.enabled = false;
 
         //set the answerWord string variable
-        answerWord = questionDataScriptable.questions[num].answer;
+        answerWord = questionDataScriptable.questions[currentQuestionIndex].answer;
         //set the image of question
-        questionImage.sprite = questionDataScriptable.questions[num].questionImage;
+        questionImage.sprite = questionDataScriptable.questions[currentQuestionIndex].questionImage;
 
-        Hint_txt.text = questionDataScriptable.questions[num].hint;
+        Hint_txt.text = questionDataScriptable.questions[currentQuestionIndex].hint;
 
 
         ResetQuestion();                               //reset the answers and options value to orignal     
