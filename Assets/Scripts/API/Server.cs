@@ -57,7 +57,7 @@ public class Server : MonoBehaviour
 				}
 				else
 				{
-					errorMessages.text = "invalid username or password!";
+					errorMessages.text = "Invalid username or password!";
 					Debug.Log("<color=red>" + w.text + "</color>");
 				}
 			}
