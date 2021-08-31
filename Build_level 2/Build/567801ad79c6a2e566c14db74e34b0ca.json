@@ -1,0 +1,15 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Word Quiz",
+"productVersion": "0.1",
+"dataUrl": "e094496191f0639eb986f4aa0a828d8c.unityweb",
+"wasmCodeUrl": "4c7f6450c912b01d12e95b1a6444cd2d.unityweb",
+"wasmFrameworkUrl": "03442ae9d1402153fd34cbf86fbdfa73.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.8f1"
+}

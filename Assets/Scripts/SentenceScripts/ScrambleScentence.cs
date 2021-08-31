@@ -19,6 +19,7 @@ public class ScrambleScentence : MonoBehaviour
     public GameObject answerPanel;
     public GameObject buttonPrefab;
     public GameObject gameEndScreen;
+    public GameObject submitButton;
     //public GameObject loadingScreen;
     
     public Text buttonText;
@@ -27,6 +28,8 @@ public class ScrambleScentence : MonoBehaviour
 
     public GameObject correctImage;
     public GameObject wrongImage;
+    public GameObject warningText;
+
 
     public int maxQuestionValue;
     public int currentQuestionValue ;
@@ -37,6 +40,7 @@ public class ScrambleScentence : MonoBehaviour
     [SerializeField]
     private SentenceDataScriptable sentenceDataScriptable;
     public GameObject finalScoreText;
+    public GameObject finalCorrectAnswersText;
 
     private void Awake()
     {
@@ -103,7 +107,7 @@ public class ScrambleScentence : MonoBehaviour
     {
         GameObject copy;
         copy = Instantiate(option);
-        copy.transform.SetParent(answerPanel.transform);
+        copy.transform.SetParent(answerPanel.transform,false);
         option.SetActive(false);
 
     }
@@ -130,9 +134,11 @@ public class ScrambleScentence : MonoBehaviour
         if (currentQuestionValue >= maxQuestionValue)
         {
             Debug.Log("GameEnd Called");
-            GameEnd();
+            Invoke("GameEnd", 1f);
+           
         }
-        currentQuestionValue += 1;
+        
+
         string answer = string.Empty;
         foreach (Transform child in answerPanel.transform)
         {
@@ -142,12 +148,15 @@ public class ScrambleScentence : MonoBehaviour
         }
         //Debug.Log(answerSentence);
         //Debug.Log(answer);
+        submitButton.GetComponent<Button>().interactable = false;
+        Debug.Log("CHECK");
 
         if (answer == answerSentence)
         {
             //correctAnswerText.GetComponent<Text>().text = "Correct Answer";
             score += 10;
             scoreText.text = score.ToString();
+            
             correctAnswerValue += 1;
             correctImage.SetActive(true);
             Invoke("NewSentence", 1f);
@@ -156,7 +165,9 @@ public class ScrambleScentence : MonoBehaviour
         {
             if (answerPanel.transform.childCount == 0)
             {
-                //correctAnswerText.GetComponent<Text>().text = "No words selected";
+                warningText.SetActive(true);
+                warningText.GetComponent<Text>().text = "No words selected! Please select some words before submitting";
+                WarningDisplayed();
             }
             else
             {
@@ -170,8 +181,11 @@ public class ScrambleScentence : MonoBehaviour
     public void NewSentence()
     {
         //correctAnswerText.GetComponent<Text>().text = " ";
+        currentQuestionValue += 1;
         correctImage.SetActive(false);
         wrongImage.SetActive(false);
+        submitButton.GetComponent<Button>().interactable = true;
+
 
         string newSentence = sentences[Random.Range(0, sentences.Count)];
         while(newSentence == sentence)
@@ -204,17 +218,20 @@ public class ScrambleScentence : MonoBehaviour
     public void GameEnd()
     {
         gameEndScreen.SetActive(true);
-        finalScoreText.GetComponent<Text>().text = "Your Score : "+ correctAnswerValue.ToString() + "/" + maxQuestionValue.ToString();
+        finalCorrectAnswersText.GetComponent<Text>().text = "Total Correct Answers : "+ correctAnswerValue.ToString() + "/" + maxQuestionValue.ToString();
+        finalScoreText.GetComponent<Text>().text = "Your Score : " + score.ToString();
     }
 
-    //public void GameLoaded()
-    //{
-    //    StartCoroutine(RemoveAfterSeconds(2, loadingScreen));
-    //}
+    public void WarningDisplayed()
+    {
+        
+        StartCoroutine(RemoveAfterSeconds(2, warningText));
+    }
 
-    //IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
-    //{
-    //    yield return new WaitForSeconds(seconds);
-    //    obj.SetActive(false);
-    //}
+    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
+    {
+        yield return new WaitForSeconds(seconds);
+        obj.SetActive(false);
+        submitButton.GetComponent<Button>().interactable = true;
+    }
 }
