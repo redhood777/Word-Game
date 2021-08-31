@@ -19,20 +19,20 @@ public class ScrambleScentence : MonoBehaviour
     public GameObject answerPanel;
     public GameObject buttonPrefab;
     public GameObject gameEndScreen;
-    public GameObject loadingScreen;
-   // public GameObject resetButton;
-   // public GameObject submitButton;
+    //public GameObject loadingScreen;
     
     public Text buttonText;
     public Text scoreText;
     public Text questionNumber;
 
+    public GameObject correctImage;
+    public GameObject wrongImage;
 
     public int maxQuestionValue;
     public int currentQuestionValue ;
 
     public int correctAnswerValue;
-    public GameObject correctAnswerText;
+    //public GameObject correctAnswerText;
 
     [SerializeField]
     private SentenceDataScriptable sentenceDataScriptable;
@@ -48,7 +48,7 @@ public class ScrambleScentence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameLoaded();
+        //GameLoaded();
         scoreText.text = "0";
         questionNumber.text = "Q.1/"+ maxQuestionValue.ToString();
         sentences = sentenceDataScriptable.sentences;
@@ -119,8 +119,9 @@ public class ScrambleScentence : MonoBehaviour
         {
             child.gameObject.SetActive(true);
         }
-
-        correctAnswerText.GetComponent<Text>().text = " ";
+        correctImage.SetActive(false);
+        wrongImage.SetActive(false);
+        //correctAnswerText.GetComponent<Text>().text = " ";
 
     }
 
@@ -144,22 +145,23 @@ public class ScrambleScentence : MonoBehaviour
 
         if (answer == answerSentence)
         {
-            correctAnswerText.GetComponent<Text>().text = "Correct Answer";
+            //correctAnswerText.GetComponent<Text>().text = "Correct Answer";
             score += 10;
             scoreText.text = score.ToString();
             correctAnswerValue += 1;
-
+            correctImage.SetActive(true);
             Invoke("NewSentence", 1f);
         }
         else
         {
             if (answerPanel.transform.childCount == 0)
             {
-                correctAnswerText.GetComponent<Text>().text = "No words selected";
+                //correctAnswerText.GetComponent<Text>().text = "No words selected";
             }
             else
             {
-                correctAnswerText.GetComponent<Text>().text = "Wrong Answer";
+                //correctAnswerText.GetComponent<Text>().text = "Wrong Answer";
+                wrongImage.SetActive(true);
                 Invoke("NewSentence", 1f);
             }     
         }
@@ -167,7 +169,9 @@ public class ScrambleScentence : MonoBehaviour
 
     public void NewSentence()
     {
-        correctAnswerText.GetComponent<Text>().text = " ";
+        //correctAnswerText.GetComponent<Text>().text = " ";
+        correctImage.SetActive(false);
+        wrongImage.SetActive(false);
 
         string newSentence = sentences[Random.Range(0, sentences.Count)];
         while(newSentence == sentence)
@@ -203,14 +207,14 @@ public class ScrambleScentence : MonoBehaviour
         finalScoreText.GetComponent<Text>().text = "Your Score : "+ correctAnswerValue.ToString() + "/" + maxQuestionValue.ToString();
     }
 
-    public void GameLoaded()
-    {
-        StartCoroutine(RemoveAfterSeconds(2, loadingScreen));
-    }
+    //public void GameLoaded()
+    //{
+    //    StartCoroutine(RemoveAfterSeconds(2, loadingScreen));
+    //}
 
-    IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
-    {
-        yield return new WaitForSeconds(seconds);
-        obj.SetActive(false);
-    }
+    //IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
+    //{
+    //    yield return new WaitForSeconds(seconds);
+    //    obj.SetActive(false);
+    //}
 }
