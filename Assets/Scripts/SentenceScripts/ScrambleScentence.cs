@@ -154,7 +154,7 @@ public class ScrambleScentence : MonoBehaviour
         if (answer == answerSentence)
         {
             //correctAnswerText.GetComponent<Text>().text = "Correct Answer";
-            score += 10;
+            score += 50;
             scoreText.text = score.ToString();
             
             correctAnswerValue += 1;
