@@ -7,9 +7,12 @@ public class hoverText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 {
     public GameObject hover;
 
+    public static bool hintscore;
+
     public void Start()
     {
         hover.SetActive(false);
+        hintscore = true;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

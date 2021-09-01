@@ -44,9 +44,20 @@ public class QuizManager : MonoBehaviour
 
     public GameObject correctAnsImage;
     public GameObject wrongAnsImage;
-    
 
-    
+
+    [Header("Sound")]
+    [SerializeField]
+    AudioSource audioSource;
+    [SerializeField]
+    AudioClip gamecomplete;
+    [SerializeField]
+    AudioClip correctanswer;
+    [SerializeField]
+    AudioClip wronganswer;
+
+
+
     private void Awake()
     {
         if (instance == null)
@@ -244,6 +255,7 @@ public class QuizManager : MonoBehaviour
             if (correctAnswer)
             {
                 Debug.Log("Correct Answer");
+                audioSource.PlayOneShot(correctanswer);
                 score = score + 50;
                 StartCoroutine(correctAnsImageEnable());
                 scoretext.text = "" + score;
@@ -258,11 +270,13 @@ public class QuizManager : MonoBehaviour
                 if (currentQuestionIndex < questionDataScriptable.questions.Count)
                 {
                     //StartCoroutine(RandomQuestion());
+                    hoverText.hintscore = true;
                     Invoke("SetQuestion", 1f); //go to next question
                 }
                 else
                 {
                     Debug.Log("Game Complete"); //else game is complete
+                    audioSource.PlayOneShot(gamecomplete);
                     gameComplete.SetActive(true);
                 }
             }
@@ -313,8 +327,13 @@ public class QuizManager : MonoBehaviour
 
     public void ShowHint()
     {
-        score = score - 10;
-        scoretext.text = score.ToString();
+        if(hoverText.hintscore == true)
+        {
+            score = score - 10;
+            scoretext.text = score.ToString();
+            hoverText.hintscore = false;
+        }
+       
     }
 
     IEnumerator correctAnsImageEnable()
@@ -326,6 +345,7 @@ public class QuizManager : MonoBehaviour
     IEnumerator WrongAnsImageEnable()
     {
         wrongAnsImage.SetActive(true);
+        audioSource.PlayOneShot(wronganswer);
         yield return new WaitForSeconds(1);
         wrongAnsImage.SetActive(false);
         ResetQuestion();
