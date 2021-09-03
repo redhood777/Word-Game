@@ -53,7 +53,7 @@ public class Server : MonoBehaviour
 			{
 				if (w.text.Contains("Authenticated"))
 				{
-					SceneManager.LoadScene(1);
+					SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 				}
 				else
 				{
