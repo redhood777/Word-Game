@@ -17,9 +17,9 @@ public class PauseScript : MonoBehaviour
         
     }
 
-    public void RestartLevel(int n)
+    public void RestartLevel()
     {
-        SceneManager.LoadScene(n);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 }

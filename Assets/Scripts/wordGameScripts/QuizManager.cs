@@ -35,7 +35,7 @@ public class QuizManager : MonoBehaviour
     public Text questionNumber;
     public int score;
     public int questionNo = 1;
-
+    public int questionnumber;
     [Header("UI Image")]
     public Image greenImage;
     public Image redImage;
@@ -56,8 +56,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField]
     AudioClip wronganswer;
 
-
-
+    
     private void Awake()
     {
         if (instance == null)
@@ -65,27 +64,30 @@ public class QuizManager : MonoBehaviour
         else
             Destroy(this.gameObject);
 
-        
+
     }
 
     private void Update()
     {
         FinalScore.text = score.ToString();
     }
+
+
     // Start is called before the first frame update
     void Start()
     {
         //wordanimation.animate.EaseIn(); 
 
-        
-        
+
+      
         selectedWordsIndex = new List<int>();           //create a new list at start
         SetQuestion();                                  //set question
     }
 
+    
     void SetQuestion()
     {
-       // int currentQuestionIndex = UnityEngine.Random.Range(0, 10); 
+        int num = UnityEngine.Random.Range(0, 11);
 
 
 
@@ -93,11 +95,19 @@ public class QuizManager : MonoBehaviour
         greenImage.enabled = false;
 
         //set the answerWord string variable
-        answerWord = questionDataScriptable.questions[currentQuestionIndex].answer;
+        answerWord = questionDataScriptable.questions[num].answer;
         //set the image of question
-        questionImage.sprite = questionDataScriptable.questions[currentQuestionIndex].questionImage;
+        questionImage.sprite = questionDataScriptable.questions[num].questionImage;
 
-        Hint_txt.text = questionDataScriptable.questions[currentQuestionIndex].hint;
+        Hint_txt.text = questionDataScriptable.questions[num].hint;
+         
+        //if randomness is to be removed, uncomment below three lines
+
+        //answerWord = questionDataScriptable.questions[currentQuestionIndex].answer;
+        ////set the image of question
+        //questionImage.sprite = questionDataScriptable.questions[currentQuestionIndex].questionImage;
+
+        //Hint_txt.text = questionDataScriptable.questions[currentQuestionIndex].hint;
 
 
         ResetQuestion();                               //reset the answers and options value to orignal     
@@ -179,21 +189,21 @@ public class QuizManager : MonoBehaviour
         if (gameStatus == GameStatus.Next || currentAnswerIndex >= answerWord.Length) return;
 
 
-       
 
 
 
-       
+
+
         selectedWordsIndex.Add(value.transform.GetSiblingIndex()); //add the child index to selectedWordsIndex list
         value.transform.LeanScale(Vector2.zero, 0.3f).setEaseInBack();
-        StartCoroutine(deactivativebutton (value));
+        StartCoroutine(deactivativebutton(value));
 
         //corutine for animation done below
-       
+
         //value.gameObject.SetActive(false); //deactivate options object
         answerWordList[currentAnswerIndex].SetWord(value.wordValue); //set the answer word list
-        //Debug.Log(value.wordValue);
-      //  Debug.Log("S" + currentAnswerIndex.ToString());
+                                                                     //Debug.Log(value.wordValue);
+                                                                     //  Debug.Log("S" + currentAnswerIndex.ToString());
 
 
         for (int i = 0; i <=
@@ -207,8 +217,8 @@ public class QuizManager : MonoBehaviour
             {
 
                 StartCoroutine(WrongAswer());
-                
-                 //Debug.Log("Wrong Answer");
+
+                //Debug.Log("Wrong Answer");
             }
             else if (char.ToUpper(answerWord[i]) == char.ToUpper(answerWordList[i].wordValue))
             {
@@ -217,7 +227,7 @@ public class QuizManager : MonoBehaviour
             }
         }
 
-      
+
 
 
 
@@ -231,12 +241,12 @@ public class QuizManager : MonoBehaviour
             resetBtn.interactable = true;
         }
 
-        
+
 
         //if currentAnswerIndex is equal to answerWord length
         if (currentAnswerIndex == answerWord.Length)
         {
-            
+
             correctAnswer = true;   //default value
             //loop through answerWordList
             for (int i = 0; i < answerWord.Length; i++)
@@ -247,7 +257,7 @@ public class QuizManager : MonoBehaviour
                     redImage.enabled = true;
                     correctAnswer = false; //set it false
                     break; //and break from the loop
-                    
+
                 }
             }
 
@@ -260,8 +270,8 @@ public class QuizManager : MonoBehaviour
                 StartCoroutine(correctAnsImageEnable());
                 scoretext.text = "" + score;
 
-                questionNo = questionNo + 1 ;
-                questionNumber.text =  questionNo + "/12";
+                questionNo = questionNo + 1;
+                questionNumber.text = questionNo + "/12";
                 greenImage.enabled = true;
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
@@ -288,7 +298,7 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    
+
 
     IEnumerator deactivativebutton(WordData value)
     {
@@ -301,7 +311,7 @@ public class QuizManager : MonoBehaviour
         {
             int index = selectedWordsIndex[selectedWordsIndex.Count - 1];
             optionsWordList[index].gameObject.SetActive(true);
-            optionsWordList[index].gameObject.GetComponent<RectTransform>().localScale  = new Vector3( 1f, 1f, 1f);
+            optionsWordList[index].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
 
             transform.LeanScale(new Vector2(1f, 1f), 0.7f).setEaseInBack();
             //transform.LeanScale(Vector2.zero, 0.1f).setEaseOutBack();
@@ -309,16 +319,16 @@ public class QuizManager : MonoBehaviour
 
             currentAnswerIndex--;
 
-            if (currentAnswerIndex ==0)
+            if (currentAnswerIndex == 0)
             {
                 resetBtn.interactable = false;
             }
-           
+
 
             answerWordList[currentAnswerIndex].SetWord('_');
         }
 
-        if(redImage.enabled)
+        if (redImage.enabled)
         {
             redImage.enabled = false;
         }
@@ -327,13 +337,13 @@ public class QuizManager : MonoBehaviour
 
     public void ShowHint()
     {
-        if(hoverText.hintscore == true)
+        if (hoverText.hintscore == true)
         {
             score = score - 10;
             scoretext.text = score.ToString();
             hoverText.hintscore = false;
         }
-       
+
     }
 
     IEnumerator correctAnsImageEnable()
@@ -353,11 +363,11 @@ public class QuizManager : MonoBehaviour
 
     IEnumerator RightAnswer()
     {
-        
+
         greenImage.enabled = true;
         yield return new WaitForSeconds(0.3f);
         greenImage.enabled = false;
-       
+
     }
 
     IEnumerator WrongAswer()
@@ -387,6 +397,6 @@ public class QuestionData
 
 public enum GameStatus
 {
-   Next,
-   Playing
+    Next,
+    Playing
 }
