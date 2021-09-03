@@ -42,6 +42,20 @@ public class ScrambleScentence : MonoBehaviour
     public GameObject finalScoreText;
     public GameObject finalCorrectAnswersText;
 
+    [Header("Sound")]
+    [SerializeField]
+    AudioSource audioSource;
+    [SerializeField]
+    AudioSource buttonAudioSource;
+    [SerializeField]
+    AudioClip gamecomplete;
+    [SerializeField]
+    AudioClip correctanswer;
+    [SerializeField]
+    AudioClip wronganswer;
+    [SerializeField]
+    AudioClip optionSelected;
+
     private void Awake()
     {
         if (instance == null)
@@ -105,6 +119,7 @@ public class ScrambleScentence : MonoBehaviour
 
     public void OptionSelected(GameObject option)
     {
+        buttonAudioSource.PlayOneShot(optionSelected);
         GameObject copy;
         copy = Instantiate(option);
         copy.transform.SetParent(answerPanel.transform,false);
@@ -133,9 +148,8 @@ public class ScrambleScentence : MonoBehaviour
     {
         if (currentQuestionValue >= maxQuestionValue)
         {
-            Debug.Log("GameEnd Called");
-            Invoke("GameEnd", 1f);
-           
+            Debug.Log("GameEnd Called");          
+            Invoke("GameEnd", 1f);         
         }
         
 
@@ -159,6 +173,7 @@ public class ScrambleScentence : MonoBehaviour
             
             correctAnswerValue += 1;
             correctImage.SetActive(true);
+            audioSource.PlayOneShot(correctanswer);
             Invoke("NewSentence", 1f);
         }
         else
@@ -173,6 +188,7 @@ public class ScrambleScentence : MonoBehaviour
             {
                 //correctAnswerText.GetComponent<Text>().text = "Wrong Answer";
                 wrongImage.SetActive(true);
+                audioSource.PlayOneShot(wronganswer);
                 Invoke("NewSentence", 1f);
             }     
         }
@@ -220,6 +236,7 @@ public class ScrambleScentence : MonoBehaviour
         gameEndScreen.SetActive(true);
         finalCorrectAnswersText.GetComponent<Text>().text = "Total Correct Answers : "+ correctAnswerValue.ToString() + "/" + maxQuestionValue.ToString();
         finalScoreText.GetComponent<Text>().text = "Your Score : " + score.ToString();
+        audioSource.PlayOneShot(gamecomplete);
     }
 
     public void WarningDisplayed()
