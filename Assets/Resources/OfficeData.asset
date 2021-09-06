@@ -46,6 +46,126 @@ MonoBehaviour:
   - questionImage: {fileID: 21300000, guid: 8ea2eacf4cc7b47138c993ba970a6da9, type: 3}
     answer: recommended
     hint: Advised or suggested as good or suitable.
+  - questionImage: {fileID: 21300000, guid: ed06ce370a4d946b4b45d2177ab0b976, type: 3}
+    answer: Schedule
+    hint: A list of planned activities/events
+  - questionImage: {fileID: 21300000, guid: 88edc9c9dd903794eb0093decae93d8f, type: 3}
+    answer: Traffic
+    hint: A large number of vehicles on the road
+  - questionImage: {fileID: 21300000, guid: fd89ea7914faf4e61ae6ae2a37415c44, type: 3}
+    answer: Increase
+    hint: 'When a quantitiy of something goes up '
+  - questionImage: {fileID: 21300000, guid: 513994552a2674a45b638bae2fd66a1a, type: 3}
+    answer: Complete
+    hint: To finish something
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
-    answer: organization
-    hint: The process of defining and grouping things or activities.
+    answer: Permission
+    hint: consent / authorization
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Pracitce
+    hint: repeated exercise in or performance of an activity
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Concern
+    hint: 'To show care for '
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Establish
+    hint: To set up an organization or business
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Approach
+    hint: 'To deal with a problem in a specific way '
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Engage
+    hint: To grab the interest of a person
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Obtain
+    hint: 'To come into possession '
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Policy
+    hint: 'A plan of action put forth by a company '
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Apparel
+    hint: Articles of clothing
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: appoint
+    hint: to choose someone officially for a job or responsibility.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Project
+    hint: 'a piece of planned work over a period of time and intended to achieve
+      a    particular purpose '
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Appealing
+    hint: to be attractive or interesting
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Generate
+    hint: 'To create '
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Convince
+    hint: make realize the truth or validity of something.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Conventiion
+    hint: a large formal assembly
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Reflect
+    hint: Mirror
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Finished
+    hint: (of a task or activity) brought to an end; completed.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Attire
+    hint: clothes, especially fine or formal ones.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Address
+    hint: the particulars of the place where someone lives or an organization is
+      situated.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Analyze
+    hint: examine (something) methodically and in detail
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Instance
+    hint: an example or single occurrence of something.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Background
+    hint: the part of a picture, scene, or design that forms a setting
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Circumstances
+    hint: a fact or condition connected with or relevant to an event or action.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Structure
+    hint: a building or other object constructed from several parts.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: judge
+    hint: a public officer appointed to decide cases in a law court.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Virtual
+    hint: not physically existing as such but made by software
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Business
+    hint: a person's regular occupation, profession, or trade.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Experiment
+    hint: a scientific procedure undertaken to make a discovery
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Employment
+    hint: the state of having paid work.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Advance
+    hint: make or cause to make progress
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Percentage
+    hint: a rate, number, or amount in each hundred.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: career
+    hint: an occupation undertaken for a significant period of a person's life and
+      with opportunities for progress.
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Requirments
+    hint: a thing that is compulsory; a necessary condition
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Proof
+    hint: Evidence
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Frequency
+    hint: 'How many times something repeats itself '
+  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    answer: Vacation
+    hint: Holiday
