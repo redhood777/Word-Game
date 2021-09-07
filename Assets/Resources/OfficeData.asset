@@ -36,75 +36,75 @@ MonoBehaviour:
   - questionImage: {fileID: 21300000, guid: 1876a15e479605146b04f341237693d2, type: 3}
     answer: greeting
     hint: A polite word or sign of welcome or recognition.
-  - questionImage: {fileID: 21300000, guid: e8a3df81398094da7bd99d805abbcc42, type: 3}
+  - questionImage: {fileID: 21300000, guid: 909c735e0cc948d418259105e643b758, type: 3}
     answer: management
     hint: The process of dealing with or controlling things or people.
-  - questionImage: {fileID: 21300000, guid: 3e5e065d0ffe54e48baf44ba497743e7, type: 3}
+  - questionImage: {fileID: 21300000, guid: a9845863c612bbd43a7c4b4d79bcff2e, type: 3}
     answer: postpone
     hint: 'Cause or arrange for (something) to take place at a time later than that
       first scheduled. '
-  - questionImage: {fileID: 21300000, guid: 8ea2eacf4cc7b47138c993ba970a6da9, type: 3}
+  - questionImage: {fileID: 21300000, guid: 226f31acadbefa0419b6d26893e385e4, type: 3}
     answer: recommended
     hint: Advised or suggested as good or suitable.
   - questionImage: {fileID: 21300000, guid: ed06ce370a4d946b4b45d2177ab0b976, type: 3}
     answer: Schedule
     hint: A list of planned activities/events
-  - questionImage: {fileID: 21300000, guid: 88edc9c9dd903794eb0093decae93d8f, type: 3}
+  - questionImage: {fileID: 21300000, guid: 1933fa4c13f54e94bb81ec8a020ab1c9, type: 3}
     answer: Traffic
     hint: A large number of vehicles on the road
-  - questionImage: {fileID: 21300000, guid: fd89ea7914faf4e61ae6ae2a37415c44, type: 3}
+  - questionImage: {fileID: 21300000, guid: b48b8770ded9f674f8bf87e356df0d6a, type: 3}
     answer: Increase
     hint: 'When a quantitiy of something goes up '
-  - questionImage: {fileID: 21300000, guid: 513994552a2674a45b638bae2fd66a1a, type: 3}
+  - questionImage: {fileID: 21300000, guid: dde7d22dc8650224f91a2afe170741ec, type: 3}
     answer: Complete
     hint: To finish something
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: 0b15bf4c8cf4e9a448546dac4958a764, type: 3}
     answer: Permission
-    hint: consent / authorization
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    hint: Consent / Authorization
+  - questionImage: {fileID: 21300000, guid: 15c6327778f8d5646a0ae35902bfb3cb, type: 3}
     answer: Pracitce
-    hint: repeated exercise in or performance of an activity
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    hint: Repeated exercise in or performance of an activity
+  - questionImage: {fileID: 21300000, guid: 33a637ac0af91d94eaf2e7974086ce4f, type: 3}
     answer: Concern
     hint: 'To show care for '
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: 68113f670daf4f14a93c92978e91ad8e, type: 3}
     answer: Establish
     hint: To set up an organization or business
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: d0812e94f446f08499be03c8cccab384, type: 3}
     answer: Approach
     hint: 'To deal with a problem in a specific way '
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: 7911dd3a39917a94998e6d6922e1f7da, type: 3}
     answer: Engage
     hint: To grab the interest of a person
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: e8e86ff2a9540df47be1a8c83d7796a4, type: 3}
     answer: Obtain
     hint: 'To come into possession '
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: dac024921dfafd644ae0fbcececc0e4a, type: 3}
     answer: Policy
     hint: 'A plan of action put forth by a company '
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: 6360122ada89f6f4d8c150e2766f53f3, type: 3}
     answer: Apparel
     hint: Articles of clothing
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: eb413b2877064c8429215fa212a35138, type: 3}
     answer: appoint
-    hint: to choose someone officially for a job or responsibility.
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    hint: To choose someone officially for a job or responsibility.
+  - questionImage: {fileID: 21300000, guid: b2338211398a7534b81b23ee343cfc84, type: 3}
     answer: Project
-    hint: 'a piece of planned work over a period of time and intended to achieve
+    hint: 'A piece of planned work over a period of time and intended to achieve
       a    particular purpose '
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: afae8755d8a96e741949bb370998140b, type: 3}
     answer: Appealing
-    hint: to be attractive or interesting
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    hint: To be attractive or interesting
+  - questionImage: {fileID: 21300000, guid: 25579e662ea34c64c8227370cf0c02a5, type: 3}
     answer: Generate
     hint: 'To create '
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+  - questionImage: {fileID: 21300000, guid: 242ec0a746ac6b441a1bc9e041eb9428, type: 3}
     answer: Convince
-    hint: make realize the truth or validity of something.
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    hint: Make realize the truth or validity of something.
+  - questionImage: {fileID: 21300000, guid: a06a6f1f1c7a05746ac20adff1804231, type: 3}
     answer: Conventiion
-    hint: a large formal assembly
-  - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
+    hint: A large formal assembly
+  - questionImage: {fileID: 21300000, guid: 2ed3310249f8b9b46afb1b6b590c3c87, type: 3}
     answer: Reflect
     hint: Mirror
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
@@ -112,54 +112,54 @@ MonoBehaviour:
     hint: (of a task or activity) brought to an end; completed.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Attire
-    hint: clothes, especially fine or formal ones.
+    hint: Clothes, especially fine or formal ones.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Address
     hint: the particulars of the place where someone lives or an organization is
       situated.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Analyze
-    hint: examine (something) methodically and in detail
+    hint: Examine (something) methodically and in detail
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Instance
-    hint: an example or single occurrence of something.
+    hint: An example or single occurrence of something.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Background
     hint: the part of a picture, scene, or design that forms a setting
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Circumstances
-    hint: a fact or condition connected with or relevant to an event or action.
+    hint: A fact or condition connected with or relevant to an event or action.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Structure
-    hint: a building or other object constructed from several parts.
+    hint: A building or other object constructed from several parts.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: judge
-    hint: a public officer appointed to decide cases in a law court.
+    hint: A public officer appointed to decide cases in a law court.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Virtual
-    hint: not physically existing as such but made by software
+    hint: Not physically existing as such but made by software
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Business
-    hint: a person's regular occupation, profession, or trade.
+    hint: A person's regular occupation, profession, or trade.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Experiment
-    hint: a scientific procedure undertaken to make a discovery
+    hint: A scientific procedure undertaken to make a discovery
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Employment
-    hint: the state of having paid work.
+    hint: The state of having paid work.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Advance
-    hint: make or cause to make progress
+    hint: Make or cause to make progress
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Percentage
-    hint: a rate, number, or amount in each hundred.
+    hint: A rate, number, or amount in each hundred.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: career
-    hint: an occupation undertaken for a significant period of a person's life and
+    hint: An occupation undertaken for a significant period of a person's life and
       with opportunities for progress.
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Requirments
-    hint: a thing that is compulsory; a necessary condition
+    hint: A thing that is compulsory; a necessary condition
   - questionImage: {fileID: 21300000, guid: 081d31ef044544eab81d73271a0c0d2b, type: 3}
     answer: Proof
     hint: Evidence
