@@ -56,7 +56,12 @@ public class QuizManager : MonoBehaviour
     [SerializeField]
     AudioClip wronganswer;
 
-    
+
+    [Header("Animation")]
+    public GameObject correctAnsAnimation;
+    public GameObject WrongAnsAnimation;
+
+    bool checkAns;
     private void Awake()
     {
         if (instance == null)
@@ -79,12 +84,12 @@ public class QuizManager : MonoBehaviour
         //wordanimation.animate.EaseIn(); 
 
 
-      
+
         selectedWordsIndex = new List<int>();           //create a new list at start
         SetQuestion();                                  //set question
     }
 
-    
+
     void SetQuestion()
     {
         int num = UnityEngine.Random.Range(0, 11);
@@ -100,7 +105,7 @@ public class QuizManager : MonoBehaviour
         questionImage.sprite = questionDataScriptable.questions[num].questionImage;
 
         Hint_txt.text = questionDataScriptable.questions[num].hint;
-         
+
         //if randomness is to be removed, uncomment below three lines
 
         //answerWord = questionDataScriptable.questions[currentQuestionIndex].answer;
@@ -206,8 +211,7 @@ public class QuizManager : MonoBehaviour
                                                                      //  Debug.Log("S" + currentAnswerIndex.ToString());
 
 
-        for (int i = 0; i <=
-            currentAnswerIndex; i++)
+        for (int i = 0; i <= currentAnswerIndex; i++) 
         {
             //Debug.Log("QQ------"+ char.ToUpper(answerWord[i]));  // Right Answer
             //Debug.Log("WW-----"+ char.ToUpper(answerWordList[i].wordValue)); ///current answer
@@ -216,18 +220,29 @@ public class QuizManager : MonoBehaviour
             if (char.ToUpper(answerWord[i]) != char.ToUpper(answerWordList[i].wordValue))
             {
 
-                StartCoroutine(WrongAswer());
-
-                //Debug.Log("Wrong Answer");
+                //StartCoroutine(WrongAswer());
+                checkAns = false;
+                Debug.Log("Wrong Answer");
             }
-            else if (char.ToUpper(answerWord[i]) == char.ToUpper(answerWordList[i].wordValue))
+
+            if (char.ToUpper(answerWord[i]) == char.ToUpper(answerWordList[i].wordValue))
             {
-                StartCoroutine(RightAnswer());
-                //Debug.Log("Right Answer");
+                // StartCoroutine(RightAnswer());
+                checkAns = true;
+                Debug.Log("Right Answer");
             }
         }
 
+        if (checkAns == false)
+        {
+            StartCoroutine(WrongAswer());
 
+        }
+        else
+        {
+            StartCoroutine(RightAnswer());
+
+        }
 
 
 
@@ -363,18 +378,22 @@ public class QuizManager : MonoBehaviour
 
     IEnumerator RightAnswer()
     {
-
+        correctAnsAnimation.SetActive(true);
         greenImage.enabled = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f); //0.3f
         greenImage.enabled = false;
+        correctAnsAnimation.SetActive(false);
 
     }
 
     IEnumerator WrongAswer()
     {
+        WrongAnsAnimation.SetActive(true);
         redImage.enabled = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f); //0.3f
         redImage.enabled = false;
+        WrongAnsAnimation.SetActive(false);
+
     }
 
 
