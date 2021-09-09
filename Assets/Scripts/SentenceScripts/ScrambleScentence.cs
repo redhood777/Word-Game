@@ -123,6 +123,7 @@ public class ScrambleScentence : MonoBehaviour
         GameObject copy;
         copy = Instantiate(option);
         copy.transform.SetParent(answerPanel.transform,false);
+        copy.GetComponent<Button>().enabled = false;
         option.SetActive(false);
 
     }
