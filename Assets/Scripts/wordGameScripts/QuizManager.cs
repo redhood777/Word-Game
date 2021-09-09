@@ -29,6 +29,7 @@ public class QuizManager : MonoBehaviour
     private int currentHintIndex = 0; // index to keep track for Hint;
 
     public Text Hint_txt;  // Text  to Show Hint;
+    public GameObject hintButton;
 
     public Text scoretext;
     public Text FinalScore;
@@ -104,7 +105,7 @@ public class QuizManager : MonoBehaviour
         //set the image of question
         questionImage.sprite = questionDataScriptable.questions[num].questionImage;
 
-        Hint_txt.text = questionDataScriptable.questions[num].hint;
+        Hint_txt.text = questionDataScriptable.questions[num].hint.ToUpper();
 
         //if randomness is to be removed, uncomment below three lines
 
@@ -301,6 +302,7 @@ public class QuizManager : MonoBehaviour
                 {
                     //StartCoroutine(RandomQuestion());
                     hoverText.hintscore = true;
+                    hintgameobjectdisable();
                     Invoke("SetQuestion", 1f); //go to next question
                 }
                 else
@@ -366,6 +368,13 @@ public class QuizManager : MonoBehaviour
 
     }
 
+    public void hintgameobjectdisable()
+    {
+        if (hintButton.activeInHierarchy == true)
+        {
+            hintButton.SetActive(false);
+        }
+    }
     IEnumerator correctAnsImageEnable()
     {
         correctAnsImage.SetActive(true);

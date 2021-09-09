@@ -5205,7 +5205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.04953623}
   m_AnchorMax: {x: 1, y: 0.95751214}
-  m_AnchoredPosition: {x: -0.099998474, y: -2.5565948}
+  m_AnchoredPosition: {x: -0.1000061, y: -2.5565948}
   m_SizeDelta: {x: -9.780075, y: 13.688259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1329549213
@@ -5932,7 +5932,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535594169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.2, y: -1.7, z: 0}
+  m_LocalPosition: {x: 6.2, y: -0.49, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6445,6 +6445,7 @@ MonoBehaviour:
   - {fileID: 1143162238}
   - {fileID: 709548921}
   Hint_txt: {fileID: 1622981663}
+  hintButton: {fileID: 965972906}
   scoretext: {fileID: 1329549214}
   FinalScore: {fileID: 548481784}
   questionNumber: {fileID: 1437988512}
@@ -7500,7 +7501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147458469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.2, y: -1.7, z: 0}
+  m_LocalPosition: {x: 6.2, y: -0.49, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}

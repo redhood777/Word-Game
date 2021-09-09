@@ -62,7 +62,7 @@ MonoBehaviour:
     answer: Permission
     hint: Consent / Authorization
   - questionImage: {fileID: 21300000, guid: 15c6327778f8d5646a0ae35902bfb3cb, type: 3}
-    answer: Pracitce
+    answer: Practice
     hint: Repeated exercise in or performance of an activity
   - questionImage: {fileID: 21300000, guid: 33a637ac0af91d94eaf2e7974086ce4f, type: 3}
     answer: Concern
@@ -102,7 +102,7 @@ MonoBehaviour:
     answer: Convince
     hint: Make realize the truth or validity of something.
   - questionImage: {fileID: 21300000, guid: a06a6f1f1c7a05746ac20adff1804231, type: 3}
-    answer: Conventiion
+    answer: Convention
     hint: A large formal assembly
   - questionImage: {fileID: 21300000, guid: 2ed3310249f8b9b46afb1b6b590c3c87, type: 3}
     answer: Reflect
@@ -138,36 +138,37 @@ MonoBehaviour:
     hint: "to say\_firmly\_or\_demand\_forcefully."
   - questionImage: {fileID: 21300000, guid: f9752a393654af94aa5c59156ca10904, type: 3}
     answer: Cushion
-    hint: 'a bag of cloth stuffed with a mass of soft material, used as a comfortable
+    hint: 'A bag of cloth stuffed with a mass of soft material, used as a comfortable
       support for sitting or leaning on. '
   - questionImage: {fileID: 21300000, guid: 9583f6d51a0b0f5409a9662bdd426414, type: 3}
     answer: Cupboard
-    hint: a piece of furniture or a space for storing things, with a door or doors
+    hint: A piece of furniture or a space for storing things, with a door or doors
       and usually with shelves.
   - questionImage: {fileID: 21300000, guid: b0a1b2f899fd247dcbfa38a5f619bea2, type: 3}
     answer: Fridge
-    hint: a storage unit to keep food at a low temperature
+    hint: A storage unit to keep food at a low temperature
   - questionImage: {fileID: 21300000, guid: 1b78526b39f4d744b8f7bd580208be63, type: 3}
     answer: Gloves
-    hint: a covering for the hand worn for protection against cold or dirt and typically
+    hint: A covering for the hand worn for protection against cold or dirt and typically
       having separate parts for each finger and the thumb
   - questionImage: {fileID: 21300000, guid: 3a53296e40c8bf64387a7789239aba1e, type: 3}
     answer: Highway
-    hint: a main road, especially one connecting major towns or cities.
+    hint: A main road, especially one connecting major towns or cities.
   - questionImage: {fileID: 21300000, guid: 79db002a8fa64334f9b05230b10911e1, type: 3}
     answer: Horse
-    hint: "a\_large\_animal\_with four\_legs\_that\_people\_ride\_on or use for\_carrying\_things
+    hint: "A\_large\_animal\_with four\_legs\_that\_people\_ride\_on or use for\_carrying\_things
       or\_pulling\_vehicles."
   - questionImage: {fileID: 21300000, guid: 1b61aaedde7cd5f408700b74dc8880bf, type: 3}
     answer: Kitchen
-    hint: "a\_room\_where\_food\_is\_kept,\_prepared, and\_cooked\_and where the\_dishes\_are\_washed."
+    hint: "A\_room\_where\_food\_is\_kept,\_prepared, and\_cooked\_and where the\_dishes\_are\_washed."
   - questionImage: {fileID: 21300000, guid: 7a54c76926ad1d548814ba34ace54ec3, type: 3}
     answer: Lamp
-    hint: a device for giving light, especially one that has a covering or is contained
+    hint: A device for giving light, especially one that has a covering or is contained
       within something
   - questionImage: {fileID: 21300000, guid: 49a04759e1b28994aaf3bce42919d2c6, type: 3}
     answer: Liver
-    hint: Evidence
+    hint: A large, meaty organ that sits on the right side of the belly that detoxifies
+      chemicals and metabolizes drugs.
   - questionImage: {fileID: 21300000, guid: ebe83dc6adaf8564aa836f58d1dacbdd, type: 3}
     answer: Torch
     hint: 'a portable battery-powered electric lamp. '

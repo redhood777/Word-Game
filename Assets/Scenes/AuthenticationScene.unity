@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72641f2220ec65d4c9f471d6322ec87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: {fileID: 1978420345}
+  username: {fileID: 0}
   password: {fileID: 714684676}
   errorMessages: {fileID: 1834424838}
   loginButton: {fileID: 183707972}
