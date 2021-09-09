@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b762a7796d94449896cd40528add32, type: 3}
+  m_Name: OfficeData 1
+  m_EditorClassIdentifier: 
+  questions:
+  - questionImage: {fileID: 21300000, guid: c23f083f25d19764e81ed91b930681fa, type: 3}
+    answer: agreement
+    hint: 'A negotiated and typically legally binding arrangement between parties
+      as to a course of action. '
+  - questionImage: {fileID: 21300000, guid: 4170b0c17246fd94b8453f3b576c13d9, type: 3}
+    answer: budget
+    hint: A financial plan for a defined period
+  - questionImage: {fileID: 21300000, guid: 44cdb96a54e4c4947b0a02be9a6875d0, type: 3}
+    answer: cancelled
+    hint: Decide or announce that a planned event will not take place.
+  - questionImage: {fileID: 21300000, guid: f3c0ff59c4b944669acc24e1ae0d5329, type: 3}
+    answer: efficiently
+    hint: The state or quality of conducting anything in a precise and accurate manner.
+  - questionImage: {fileID: 21300000, guid: 668bef6c503e56f47bc6e18b8a76b736, type: 3}
+    answer: emergency
+    hint: A serious, unexpected, and often dangerous situation requiring immediate
+      action.
+  - questionImage: {fileID: 21300000, guid: e7169d044418dee4989855f053f7103c, type: 3}
+    answer: experience
+    hint: A vast amount knowledge in a certain field of work or study.
+  - questionImage: {fileID: 21300000, guid: 1876a15e479605146b04f341237693d2, type: 3}
+    answer: greeting
+    hint: A polite word or sign of welcome or recognition.
+  - questionImage: {fileID: 21300000, guid: 909c735e0cc948d418259105e643b758, type: 3}
+    answer: management
+    hint: The process of dealing with or controlling things or people.
+  - questionImage: {fileID: 21300000, guid: a9845863c612bbd43a7c4b4d79bcff2e, type: 3}
+    answer: postpone
+    hint: 'Cause or arrange for (something) to take place at a time later than that
+      first scheduled. '
+  - questionImage: {fileID: 21300000, guid: 226f31acadbefa0419b6d26893e385e4, type: 3}
+    answer: recommended
+    hint: Advised or suggested as good or suitable.
+  - questionImage: {fileID: 21300000, guid: ed06ce370a4d946b4b45d2177ab0b976, type: 3}
+    answer: Schedule
+    hint: A list of planned activities/events
+  - questionImage: {fileID: 21300000, guid: 1933fa4c13f54e94bb81ec8a020ab1c9, type: 3}
+    answer: Traffic
+    hint: A large number of vehicles on the road
+  - questionImage: {fileID: 21300000, guid: b48b8770ded9f674f8bf87e356df0d6a, type: 3}
+    answer: Increase
+    hint: 'When a quantitiy of something goes up '
+  - questionImage: {fileID: 21300000, guid: dde7d22dc8650224f91a2afe170741ec, type: 3}
+    answer: Complete
+    hint: To finish something
+  - questionImage: {fileID: 21300000, guid: 0b15bf4c8cf4e9a448546dac4958a764, type: 3}
+    answer: Permission
+    hint: Consent / Authorization

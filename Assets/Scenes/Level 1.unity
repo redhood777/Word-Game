@@ -5757,7 +5757,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1/12
+  m_Text: 1/15
 --- !u!1 &1460965268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6450,7 +6450,7 @@ MonoBehaviour:
   questionNumber: {fileID: 1437988512}
   score: 0
   questionNo: 1
-  questionnumber: 19
+  questionnumber: 15
   greenImage: {fileID: 882491363}
   redImage: {fileID: 1736941461}
   resetBtn: {fileID: 965226465}

@@ -92,7 +92,7 @@ public class QuizManager : MonoBehaviour
 
     void SetQuestion()
     {
-        int num = UnityEngine.Random.Range(0, 11);
+        int num = UnityEngine.Random.Range(0, 50);
 
 
 
@@ -211,7 +211,7 @@ public class QuizManager : MonoBehaviour
                                                                      //  Debug.Log("S" + currentAnswerIndex.ToString());
 
 
-        for (int i = 0; i <= currentAnswerIndex; i++) 
+        for (int i = 0; i <= currentAnswerIndex; i++)
         {
             //Debug.Log("QQ------"+ char.ToUpper(answerWord[i]));  // Right Answer
             //Debug.Log("WW-----"+ char.ToUpper(answerWordList[i].wordValue)); ///current answer
@@ -286,13 +286,18 @@ public class QuizManager : MonoBehaviour
                 scoretext.text = "" + score;
 
                 questionNo = questionNo + 1;
-                questionNumber.text = questionNo + "/12";
+                questionNumber.text = questionNo + "/15";
                 greenImage.enabled = true;
                 gameStatus = GameStatus.Next; //set the game status
                 currentQuestionIndex++; //increase currentQuestionIndex
 
+                int a = questionDataScriptable.questions.Count;
+                int b = 35;
+                int c = a - b;
                 //if currentQuestionIndex is less that total available questions
-                if (currentQuestionIndex < questionDataScriptable.questions.Count)
+                //if (currentQuestionIndex < questionDataScriptable.questions.Count) //if you want all questions from scriptable objects uncomment
+                if (currentQuestionIndex < c)
+
                 {
                     //StartCoroutine(RandomQuestion());
                     hoverText.hintscore = true;
