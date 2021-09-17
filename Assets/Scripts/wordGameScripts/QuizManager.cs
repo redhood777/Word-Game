@@ -63,6 +63,8 @@ public class QuizManager : MonoBehaviour
     public GameObject WrongAnsAnimation;
 
     bool checkAns;
+    private static int lastRandomNumber;
+
     private void Awake()
     {
         if (instance == null)
@@ -76,6 +78,11 @@ public class QuizManager : MonoBehaviour
     private void Update()
     {
         FinalScore.text = score.ToString();
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            CloseHint();
+        }
     }
 
 
@@ -91,21 +98,40 @@ public class QuizManager : MonoBehaviour
     }
 
 
+    public static int generateRandomNumber(int min, int max)
+    {
+
+        int result = UnityEngine.Random.Range(min, max);
+
+        if (result == lastRandomNumber)
+        {
+
+            return generateRandomNumber(min, max);
+
+        }
+
+        lastRandomNumber = result;
+        return result;
+
+    }
     void SetQuestion()
     {
+
+        int go = generateRandomNumber(0, 50);
+
+
         int num = UnityEngine.Random.Range(0, 50);
-
-
 
         gameStatus = GameStatus.Playing;                //set GameStatus to playing 
         greenImage.enabled = false;
 
         //set the answerWord string variable
-        answerWord = questionDataScriptable.questions[num].answer;
+        answerWord = questionDataScriptable.questions[go].answer;
+        Debug.Log(answerWord);
         //set the image of question
-        questionImage.sprite = questionDataScriptable.questions[num].questionImage;
+        questionImage.sprite = questionDataScriptable.questions[go].questionImage;
 
-        Hint_txt.text = questionDataScriptable.questions[num].hint.ToUpper();
+        Hint_txt.text = questionDataScriptable.questions[go].hint.ToUpper();
 
         //if randomness is to be removed, uncomment below three lines
 
@@ -410,6 +436,12 @@ public class QuizManager : MonoBehaviour
 
     }
 
+
+    public void CloseHint()
+    {
+        if (hintButton.activeInHierarchy)
+            hintButton.SetActive(false);
+    }
 
 }
 
