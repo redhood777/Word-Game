@@ -91,7 +91,7 @@ MonoBehaviour:
   - questionImage: {fileID: 21300000, guid: b2338211398a7534b81b23ee343cfc84, type: 3}
     answer: Project
     hint: 'A piece of planned work over a period of time and intended to achieve
-      a    particular purpose '
+      a  particular purpose '
   - questionImage: {fileID: 21300000, guid: afae8755d8a96e741949bb370998140b, type: 3}
     answer: Appealing
     hint: To be attractive or interesting
@@ -119,8 +119,8 @@ MonoBehaviour:
     hint: a plan of action adopted by an individual or social group
   - questionImage: {fileID: 21300000, guid: c8ebae3e57899414aab1618109014366, type: 3}
     answer: Barricade
-    hint: a line or pile of objects put together, often quickly, to stop people from
-      going where they want to go.
+    hint: a line of objects put together, to stop people from going where they want
+      to go.
   - questionImage: {fileID: 21300000, guid: c4d1f9b090ef6604695208e1fd4cc457, type: 3}
     answer: Catapult
     hint: "a\_device\_that can\_throw\_objects\_at a high\_speed."
@@ -146,11 +146,10 @@ MonoBehaviour:
       and usually with shelves.
   - questionImage: {fileID: 21300000, guid: b0a1b2f899fd247dcbfa38a5f619bea2, type: 3}
     answer: Fridge
-    hint: A storage unit to keep food at a low temperature
+    hint: A storage unit to keep food at a low temperature.
   - questionImage: {fileID: 21300000, guid: 1b78526b39f4d744b8f7bd580208be63, type: 3}
     answer: Gloves
-    hint: A covering for the hand worn for protection against cold or dirt and typically
-      having separate parts for each finger and the thumb
+    hint: A covering for the hand worn for protection against cold or dirt.
   - questionImage: {fileID: 21300000, guid: 3a53296e40c8bf64387a7789239aba1e, type: 3}
     answer: Highway
     hint: A main road, especially one connecting major towns or cities.
@@ -160,15 +159,14 @@ MonoBehaviour:
       or\_pulling\_vehicles."
   - questionImage: {fileID: 21300000, guid: 1b61aaedde7cd5f408700b74dc8880bf, type: 3}
     answer: Kitchen
-    hint: "A\_room\_where\_food\_is\_kept,\_prepared, and\_cooked\_and where the\_dishes\_are\_washed."
+    hint: "A\_room\_where\_food\_is\_kept,\_prepared, and\_cooked."
   - questionImage: {fileID: 21300000, guid: 7a54c76926ad1d548814ba34ace54ec3, type: 3}
     answer: Lamp
     hint: A device for giving light, especially one that has a covering or is contained
       within something
   - questionImage: {fileID: 21300000, guid: 49a04759e1b28994aaf3bce42919d2c6, type: 3}
     answer: Liver
-    hint: A large, meaty organ that sits on the right side of the belly that detoxifies
-      chemicals and metabolizes drugs.
+    hint: A large, meaty organ that sits on the right side of the belly.
   - questionImage: {fileID: 21300000, guid: ebe83dc6adaf8564aa836f58d1dacbdd, type: 3}
     answer: Torch
     hint: 'a portable battery-powered electric lamp. '
