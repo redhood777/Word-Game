@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 8212966}
   - component: {fileID: 8212965}
   - component: {fileID: 8212964}
+  - component: {fileID: 8212967}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -177,12 +178,12 @@ VideoPlayer:
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: 
+  m_Url: http://localhost/result/video/tutorial.mp4
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
@@ -225,6 +226,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8212962}
   m_CullTransparentMesh: 0
+--- !u!114 &8212967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8212962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff0b2d56fe337b489969f902001f966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: http://localhost/result/video/tutorial.mp4
 --- !u!1 &47153868
 GameObject:
   m_ObjectHideFlags: 0
