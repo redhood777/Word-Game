@@ -1,25 +1,34 @@
 mergeInto(LibraryManager.library, {
-  Hello: function () {
-    window.alert("Hello, world!");
-  },
-  HelloString: function (str) {
-    window.alert(Pointer_stringify(str));
-  },
-  PrintFloatArray: function (array, size) {
-    for(var i = 0; i < size; i++)
-    console.log(HEAPF32[(array >> 2) + i]);
-  },
-  AddNumbers: function (x, y) {
-    return x + y;
-  },
-  StringReturnValueFunction: function () {
-    var returnStr = "bla";
-    var bufferSize = lengthBytesUTF8(returnStr) + 1;
-    var buffer = _malloc(bufferSize);
-    stringToUTF8(returnStr, buffer, bufferSize);
-    return buffer;
-  },
-  BindWebGLTexture: function (texture) {
-    GLctx.bindTexture(GLctx.TEXTURE_2D, GL.textures[texture]);
-  },
+createCookie: function(name, value, days) {
+
+	var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+	
+	var curCookie = name + "=" + value + 
+    ", expires=" + date.toGMTString();
+	console.log("Cookie Created");
+	document.cookie = curCookie;
+	console.log(curCookie);
+	
+},
+getCookie: function(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+			console.log(document.cookie.substring(c_start, c_end));
+            return unescape(document.cookie.substring(c_start, c_end));
+			
+        }
+    }
+    return "";
+	console.log("Cookie Fetched");
+	window.alert("getCookie working");
+},
+
 });
+

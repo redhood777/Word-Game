@@ -208,7 +208,14 @@ public class ScrambleScentence : MonoBehaviour
         while(newSentence == sentence)
         {
             newSentence = sentences[Random.Range(0, sentences.Count)];
+            
         }
+        //string tmp = newSentence;
+
+        //while(tmp == newSentence)
+        //{
+        //    newSentence = sentences[Random.Range(0, sentences.Count)];
+        //}
 
         foreach (Transform child in answerPanel.transform)
         {
@@ -243,7 +250,7 @@ public class ScrambleScentence : MonoBehaviour
     public void WarningDisplayed()
     {
         
-        StartCoroutine(RemoveAfterSeconds(2, warningText));
+        StartCoroutine(RemoveAfterSeconds(1, warningText));
     }
 
     IEnumerator RemoveAfterSeconds(int seconds, GameObject obj)
@@ -251,5 +258,10 @@ public class ScrambleScentence : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         obj.SetActive(false);
         submitButton.GetComponent<Button>().interactable = true;
+    }
+
+    public void CheckNoRepeatedSentence()
+    {
+
     }
 }

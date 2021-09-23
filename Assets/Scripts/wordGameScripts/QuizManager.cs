@@ -65,6 +65,8 @@ public class QuizManager : MonoBehaviour
     bool checkAns;
     private static int lastRandomNumber;
 
+    public GameObject jsButton;
+
     private void Awake()
     {
         if (instance == null)
@@ -83,6 +85,11 @@ public class QuizManager : MonoBehaviour
         {
             CloseHint();
         }
+        if (Application.runInBackground == false)
+        {
+            jsButton.SetActive(true);
+        }
+        
     }
 
 
@@ -90,7 +97,7 @@ public class QuizManager : MonoBehaviour
     void Start()
     {
         //wordanimation.animate.EaseIn(); 
-
+        Application.runInBackground = true;
 
 
         selectedWordsIndex = new List<int>();           //create a new list at start

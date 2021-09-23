@@ -12,6 +12,8 @@ public class Video_Controller : MonoBehaviour
     {
         vidPlayer = this.GetComponent<VideoPlayer>();
         vidPlayer.url = url;
+        //vidPlayer.clip = Resources.Load<VideoClip>("tutorial");
+        //vidPlayer.Play();
     }
 
     // Update is called once per frame
