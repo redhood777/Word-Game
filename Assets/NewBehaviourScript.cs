@@ -11,29 +11,28 @@ public class NewBehaviourScript : MonoBehaviour
     [DllImport("__Internal")]
     private static extern string getCookie(string a); 
     
-    [DllImport("__Internal")]
-    private static extern string getCookie1(string a);
-
-    [DllImport("__Internal")]
-    private static extern string getCookie2();
+   
     // Start is called before the first frame update
     void Start()
     {
-        //setCookie("email","abc@abc.com",1);
+        setCookie("email","abc@abc.com",1);
 
         string result = getCookie("email");
 
 
         Debug.Log("****************--"+result + ">?>>>>>>>>>>>>>>>>>>");
 
-
-        string result1 = getCookie1("email");
-
-        string result112 = getCookie2();
+        print(result + "#########################");
 
 
-        Debug.Log("****************--???" + result1+ ">?>>>>>>>>>>>>>>>>>>");
-        Debug.Log("****************--???" + result112 + ">?>>>>>>>>>>>>>>>>>>");
+        // string result1 = getCookie1("email");
+        //
+        //string result112 = getCookie2();
+
+
+        /// Debug.Log("****************--???" + result1 + ">?>>>>>>>>>>>>>>>>>>");
+
+        // Debug.Log("****************--???" + result112 + ">?>>>>>>>>>>>>>>>>>>");
 
     }
 
