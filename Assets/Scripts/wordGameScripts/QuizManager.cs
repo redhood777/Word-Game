@@ -126,6 +126,7 @@ public class QuizManager : MonoBehaviour
         greenImage.enabled = false;
 
         //set the answerWord string variable
+        
         answerWord = questionDataScriptable.questions[go].answer;
         Debug.Log(answerWord);
         //set the image of question
