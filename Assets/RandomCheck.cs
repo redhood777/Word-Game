@@ -11,7 +11,7 @@ public class RandomCheck : MonoBehaviour
 
     public  int number;
 
-    public static int i;
+  //  public  int i;
 
      //var rand = new Random();
 
@@ -29,6 +29,16 @@ public class RandomCheck : MonoBehaviour
         else
         {
             Destroy(this);
+
+        }
+
+        for (int i = 0; i < 50; i++)
+        {
+            do
+            {
+                number = rand.Next(1, 51);
+            } while (savenumber.Contains(number));
+            savenumber.Add(number);
         }
     }
     // Start is called before the first frame update
@@ -37,15 +47,7 @@ public class RandomCheck : MonoBehaviour
 
 
 
-        for (int i = 0; i < 6; i++)
-        {
-            do
-            {
-                number = rand.Next(1, 51);
-            } while (savenumber.Contains(number));
-            savenumber.Add(number);
-        }
-
+      
       
 
     }

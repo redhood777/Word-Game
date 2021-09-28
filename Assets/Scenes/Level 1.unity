@@ -7217,7 +7217,6 @@ MonoBehaviour:
   wronganswer: {fileID: 8300000, guid: 2d0f08eafe7167f44901d2d6e8818fd3, type: 3}
   correctAnsAnimation: {fileID: 1535594169}
   WrongAnsAnimation: {fileID: 2147458469}
-  jsButton: {fileID: 0}
 --- !u!1 &1733845990
 GameObject:
   m_ObjectHideFlags: 0
@@ -8004,7 +8003,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Are you sure wou want to restart?
+  m_Text: Are you sure you want to restart?
 --- !u!222 &1864676666
 CanvasRenderer:
   m_ObjectHideFlags: 0

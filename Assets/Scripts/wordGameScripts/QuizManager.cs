@@ -63,9 +63,10 @@ public class QuizManager : MonoBehaviour
     public GameObject WrongAnsAnimation;
 
     bool checkAns;
-    private static int lastRandomNumber;
+    
 
-    public GameObject jsButton;
+
+    int num;
 
     private void Awake()
     {
@@ -85,10 +86,10 @@ public class QuizManager : MonoBehaviour
         {
             CloseHint();
         }
-        if (Application.runInBackground == false)
-        {
-            jsButton.SetActive(true);
-        }
+        //if (Application.runInBackground == false)
+        //{
+        //   // jsButton.SetActive(true);
+        //}
 
     }
 
@@ -129,7 +130,9 @@ public class QuizManager : MonoBehaviour
 
         //int num = UnityEngine.Random.Range(0, 50);
 
-        int num = RandomCheck.instance.savenumber[0];
+        num = RandomCheck.instance.savenumber[0];
+
+
 
         gameStatus = GameStatus.Playing;                //set GameStatus to playing 
         greenImage.enabled = false;
@@ -324,8 +327,11 @@ public class QuizManager : MonoBehaviour
                 questionNo = questionNo + 1;
                 questionNumber.text = questionNo + "/15";
                 greenImage.enabled = true;
+                RandomCheck.instance.savenumber.Remove(num);
                 gameStatus = GameStatus.Next; //set the game status
+               
                 currentQuestionIndex++; //increase currentQuestionIndex
+                 
 
                 int a = questionDataScriptable.questions.Count;
                 int b = 35;
@@ -336,6 +342,7 @@ public class QuizManager : MonoBehaviour
 
                 {
                     //StartCoroutine(RandomQuestion());
+                    RandomCheck.instance.savenumber.Remove(num);
                     hoverText.hintscore = true;
                     hintgameobjectdisable();
                     Invoke("SetQuestion", 1f); //go to next question
