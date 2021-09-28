@@ -128,8 +128,11 @@ public class QuizManager : MonoBehaviour
         //set the answerWord string variable
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         answerWord = questionDataScriptable.questions[num].answer;
 =======
+=======
+>>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
 =======
 >>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
         
