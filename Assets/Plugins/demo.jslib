@@ -1,25 +1,25 @@
 mergeInto(LibraryManager.library, {
-  Hello: function () {
-    window.alert("Hello, world!");
-  },
-  HelloString: function (str) {
-    window.alert(Pointer_stringify(str));
-  },
-  PrintFloatArray: function (array, size) {
-    for(var i = 0; i < size; i++)
-    console.log(HEAPF32[(array >> 2) + i]);
-  },
-  AddNumbers: function (x, y) {
-    return x + y;
-  },
-  StringReturnValueFunction: function () {
-    var returnStr = "bla";
-    var bufferSize = lengthBytesUTF8(returnStr) + 1;
-    var buffer = _malloc(bufferSize);
-    stringToUTF8(returnStr, buffer, bufferSize);
-    return buffer;
-  },
-  BindWebGLTexture: function (texture) {
-    GLctx.bindTexture(GLctx.TEXTURE_2D, GL.textures[texture]);
-  },
+setCookie: function(a, b, expiredays) {
+var c_name = Pointer_stringify(a);
+var value = Pointer_stringify(b);
+var exdate = new Date();
+exdate.setDate(exdate.getDate() + expiredays);
+document.cookie = c_name + "=" + value + ";path=/" + ((expiredays ==null) ? "" : ";expires=" + exdate.toGMTString());
+},
+getCookie :function(a) {
+var name = Pointer_stringify(a);
+var cookieArr = document.cookie.split(";");
+for(var i = 0; i < cookieArr.length; i++) {
+    var cookiePair = cookieArr[i].split("=");
+    if(name == cookiePair[0].trim()) {
+	window.alert(name); 
+   var bufferSize = lengthBytesUTF8(decodeURIComponent(cookiePair[1])) + 1;
+   var buffer = _malloc(bufferSize);
+   stringToUTF8(decodeURIComponent(cookiePair[1]), buffer, bufferSize);
+	return buffer;
+    }
+}
+// Return null if not found
+return null;
+},
 });

@@ -63,6 +63,8 @@ public class QuizManager : MonoBehaviour
     public GameObject WrongAnsAnimation;
 
     bool checkAns;
+    private static int lastRandomNumber;
+
     private void Awake()
     {
         if (instance == null)
@@ -76,6 +78,11 @@ public class QuizManager : MonoBehaviour
     private void Update()
     {
         FinalScore.text = score.ToString();
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            CloseHint();
+        }
     }
 
 
@@ -86,22 +93,55 @@ public class QuizManager : MonoBehaviour
 
 
 
-        selectedWordsIndex = new List<int>();           //create a new list at start
+      //  selectedWordsIndex = new List<int>();           //create a new list at start
         SetQuestion();                                  //set question
     }
 
 
+    //public static int generateRandomNumber(int min, int max)
+    //{
+
+    //    int result = UnityEngine.Random.Range(min, max);
+
+    //    if (result == lastRandomNumber)
+    //    {
+
+    //        return generateRandomNumber(min, max);
+
+    //    }
+
+    //    lastRandomNumber = result;
+    //    return result;
+
+    //}
     void SetQuestion()
     {
+
+        //int go = generateRandomNumber(0, 50);
+
+
         int num = UnityEngine.Random.Range(0, 50);
-
-
 
         gameStatus = GameStatus.Playing;                //set GameStatus to playing 
         greenImage.enabled = false;
 
         //set the answerWord string variable
+//<<<<<<< HEAD
+//<<<<<<< HEAD
+//<<<<<<< HEAD
+//<<<<<<< HEAD
         answerWord = questionDataScriptable.questions[num].answer;
+//=======
+//=======
+//>>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
+//=======
+//>>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
+//=======
+//>>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
+        
+        answerWord = questionDataScriptable.questions[go].answer;
+//>>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
+        Debug.Log(answerWord);
         //set the image of question
         questionImage.sprite = questionDataScriptable.questions[num].questionImage;
 
@@ -410,6 +450,12 @@ public class QuizManager : MonoBehaviour
 
     }
 
+
+    public void CloseHint()
+    {
+        if (hintButton.activeInHierarchy)
+            hintButton.SetActive(false);
+    }
 
 }
 
