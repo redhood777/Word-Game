@@ -65,6 +65,8 @@ public class QuizManager : MonoBehaviour
     bool checkAns;
     private static int lastRandomNumber;
 
+    public GameObject jsButton;
+
     private void Awake()
     {
         if (instance == null)
@@ -79,10 +81,15 @@ public class QuizManager : MonoBehaviour
     {
         FinalScore.text = score.ToString();
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             CloseHint();
         }
+        if (Application.runInBackground == false)
+        {
+            jsButton.SetActive(true);
+        }
+
     }
 
 
@@ -90,34 +97,34 @@ public class QuizManager : MonoBehaviour
     void Start()
     {
         //wordanimation.animate.EaseIn(); 
+        Application.runInBackground = true;
 
 
-
-      //  selectedWordsIndex = new List<int>();           //create a new list at start
+        selectedWordsIndex = new List<int>();           //create a new list at start
         SetQuestion();                                  //set question
     }
 
 
-    //public static int generateRandomNumber(int min, int max)
-    //{
+    public static int generateRandomNumber(int min, int max)
+    {
 
-    //    int result = UnityEngine.Random.Range(min, max);
+        int result = UnityEngine.Random.Range(min, max);
 
-    //    if (result == lastRandomNumber)
-    //    {
+        if (result == lastRandomNumber)
+        {
 
-    //        return generateRandomNumber(min, max);
+            return generateRandomNumber(min, max);
 
-    //    }
+        }
 
-    //    lastRandomNumber = result;
-    //    return result;
+        lastRandomNumber = result;
+        return result;
 
-    //}
+    }
     void SetQuestion()
     {
 
-        //int go = generateRandomNumber(0, 50);
+        int go = generateRandomNumber(0, 50);
 
 
         int num = UnityEngine.Random.Range(0, 50);
@@ -126,26 +133,12 @@ public class QuizManager : MonoBehaviour
         greenImage.enabled = false;
 
         //set the answerWord string variable
-//<<<<<<< HEAD
-//<<<<<<< HEAD
-//<<<<<<< HEAD
-//<<<<<<< HEAD
-        answerWord = questionDataScriptable.questions[num].answer;
-//=======
-//=======
-//>>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
-//=======
-//>>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
-//=======
-//>>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
-        
         answerWord = questionDataScriptable.questions[go].answer;
-//>>>>>>> ea3d6eddd5ecc2a29f77d9dcca7903cb9d065a7c
         Debug.Log(answerWord);
         //set the image of question
-        questionImage.sprite = questionDataScriptable.questions[num].questionImage;
+        questionImage.sprite = questionDataScriptable.questions[go].questionImage;
 
-        Hint_txt.text = questionDataScriptable.questions[num].hint.ToUpper();
+        Hint_txt.text = questionDataScriptable.questions[go].hint.ToUpper();
 
         //if randomness is to be removed, uncomment below three lines
 
