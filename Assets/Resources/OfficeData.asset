@@ -142,8 +142,7 @@ MonoBehaviour:
       support for sitting or leaning on. '
   - questionImage: {fileID: 21300000, guid: 9583f6d51a0b0f5409a9662bdd426414, type: 3}
     answer: Cupboard
-    hint: A piece of furniture or a space for storing things, with a door or doors
-      and usually with shelves.
+    hint: A piece of furniture or a space for storing things, with a door
   - questionImage: {fileID: 21300000, guid: b0a1b2f899fd247dcbfa38a5f619bea2, type: 3}
     answer: Fridge
     hint: A storage unit to keep food at a low temperature.
@@ -155,18 +154,16 @@ MonoBehaviour:
     hint: A main road, especially one connecting major towns or cities.
   - questionImage: {fileID: 21300000, guid: 79db002a8fa64334f9b05230b10911e1, type: 3}
     answer: Horse
-    hint: "A\_large\_animal\_with four\_legs\_that\_people\_ride\_on or use for\_carrying\_things
-      or\_pulling\_vehicles."
+    hint: "A\_large\_animal\_with four\_legs\_that\_people\_ride\_on"
   - questionImage: {fileID: 21300000, guid: 1b61aaedde7cd5f408700b74dc8880bf, type: 3}
     answer: Kitchen
-    hint: "A\_room\_where\_food\_is\_kept,\_prepared, and\_cooked."
+    hint: "A\_room\_where\_food\_is\_kept,\_prepared, and\_cooked"
   - questionImage: {fileID: 21300000, guid: 7a54c76926ad1d548814ba34ace54ec3, type: 3}
     answer: Lamp
-    hint: A device for giving light, especially one that has a covering or is contained
-      within something
+    hint: A device for giving light, especially one that has a covering
   - questionImage: {fileID: 21300000, guid: 49a04759e1b28994aaf3bce42919d2c6, type: 3}
     answer: Liver
-    hint: A large, meaty organ that sits on the right side of the belly.
+    hint: A large, meaty organ that sits on the right side of the belly
   - questionImage: {fileID: 21300000, guid: ebe83dc6adaf8564aa836f58d1dacbdd, type: 3}
     answer: Torch
     hint: 'a portable battery-powered electric lamp. '
