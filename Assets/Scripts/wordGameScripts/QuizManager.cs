@@ -93,31 +93,31 @@ public class QuizManager : MonoBehaviour
 
 
 
-        selectedWordsIndex = new List<int>();           //create a new list at start
+      //  selectedWordsIndex = new List<int>();           //create a new list at start
         SetQuestion();                                  //set question
     }
 
 
-    public static int generateRandomNumber(int min, int max)
-    {
+    //public static int generateRandomNumber(int min, int max)
+    //{
 
-        int result = UnityEngine.Random.Range(min, max);
+    //    int result = UnityEngine.Random.Range(min, max);
 
-        if (result == lastRandomNumber)
-        {
+    //    if (result == lastRandomNumber)
+    //    {
 
-            return generateRandomNumber(min, max);
+    //        return generateRandomNumber(min, max);
 
-        }
+    //    }
 
-        lastRandomNumber = result;
-        return result;
+    //    lastRandomNumber = result;
+    //    return result;
 
-    }
+    //}
     void SetQuestion()
     {
 
-        int go = generateRandomNumber(0, 50);
+        //int go = generateRandomNumber(0, 50);
 
 
         int num = UnityEngine.Random.Range(0, 50);
@@ -126,12 +126,12 @@ public class QuizManager : MonoBehaviour
         greenImage.enabled = false;
 
         //set the answerWord string variable
-        answerWord = questionDataScriptable.questions[go].answer;
+        answerWord = questionDataScriptable.questions[num].answer;
         Debug.Log(answerWord);
         //set the image of question
-        questionImage.sprite = questionDataScriptable.questions[go].questionImage;
+        questionImage.sprite = questionDataScriptable.questions[num].questionImage;
 
-        Hint_txt.text = questionDataScriptable.questions[go].hint.ToUpper();
+        Hint_txt.text = questionDataScriptable.questions[num].hint.ToUpper();
 
         //if randomness is to be removed, uncomment below three lines
 
