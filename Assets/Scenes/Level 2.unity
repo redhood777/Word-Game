@@ -3206,7 +3206,7 @@ MonoBehaviour:
   correctImage: {fileID: 1201862428}
   wrongImage: {fileID: 331147591}
   warningText: {fileID: 281324267}
-  maxQuestionValue: 50
+  maxQuestionValue: 10
   currentQuestionValue: 1
   correctAnswerValue: 0
   sentenceDataScriptable: {fileID: 11400000, guid: cdd42b5b8762d77409b1fbce702b7f40,
