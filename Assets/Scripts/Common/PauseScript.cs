@@ -19,6 +19,7 @@ public class PauseScript : MonoBehaviour
 
     public void RestartLevel()
     {
+       // RandomCheck.instance.savenumber.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
