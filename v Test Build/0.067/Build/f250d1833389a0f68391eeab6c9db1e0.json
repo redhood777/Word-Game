@@ -1,0 +1,16 @@
+{
+"companyName": "Trellissoft",
+"productName": "Guess Words 1.9c",
+"productVersion": "1.9c",
+"dataUrl": "2e56c7b070aca88452c2b5445e61531c.unityweb",
+"wasmCodeUrl": "0083eaf7e2bf7a6849f05ee640ff0976.unityweb",
+"wasmFrameworkUrl": "d8eaaf5e30f39af47953598ce2c81153.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.8f1"
+}
