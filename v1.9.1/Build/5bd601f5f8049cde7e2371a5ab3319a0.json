@@ -1,0 +1,16 @@
+{
+"companyName": "Trellissoft",
+"productName": "Build-A-Phrase 1.9",
+"productVersion": "1.9",
+"dataUrl": "f4a8082cc4adc59f1674d319975f195b.unityweb",
+"wasmCodeUrl": "0b663248bd8028af08726db4df07daed.unityweb",
+"wasmFrameworkUrl": "38b3c1c5d98abaa7dbf31029e64d99b6.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.8f1"
+}

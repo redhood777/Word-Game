@@ -860,7 +860,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: No words selected! Please select some words before submitting
+  m_Text: No words selected! Please select some words.
 --- !u!222 &281324270
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1022,7 +1022,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset
+  m_Text: Back
 --- !u!222 &382882281
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2501,7 +2501,7 @@ GameObject:
   - component: {fileID: 1332075184}
   - component: {fileID: 1332075187}
   m_Layer: 5
-  m_Name: ResetButton
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2571,7 +2571,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1802006485}
-        m_MethodName: ResetOptions
+        m_MethodName: RemoveSelectedOption
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3201,10 +3201,12 @@ MonoBehaviour:
   buttonText: {fileID: 0}
   scoreText: {fileID: 1361798825}
   questionNumber: {fileID: 1209573741}
+  originalOptions: []
+  copyOptions: []
   correctImage: {fileID: 1201862428}
   wrongImage: {fileID: 331147591}
   warningText: {fileID: 281324267}
-  maxQuestionValue: 10
+  maxQuestionValue: 50
   currentQuestionValue: 1
   correctAnswerValue: 0
   sentenceDataScriptable: {fileID: 11400000, guid: cdd42b5b8762d77409b1fbce702b7f40,
