@@ -15,16 +15,26 @@ public class ScrambleScentence : MonoBehaviour
     string[] words;
     string[] jumbledWords;
     List<string> sentences;
+    int randNumber;
+    int listLenght;
+    int value = 1;
+
     public GameObject optionsPanel;
     public GameObject answerPanel;
     public GameObject buttonPrefab;
     public GameObject gameEndScreen;
     public GameObject submitButton;
     //public GameObject loadingScreen;
-    
+
+
+
     public Text buttonText;
     public Text scoreText;
     public Text questionNumber;
+
+    public List<GameObject> originalOptions;
+    public List<GameObject> copyOptions;
+    List<int> list = new List<int>();
 
     public GameObject correctImage;
     public GameObject wrongImage;
@@ -32,7 +42,7 @@ public class ScrambleScentence : MonoBehaviour
 
 
     public int maxQuestionValue;
-    public int currentQuestionValue ;
+    public int currentQuestionValue;
 
     public int correctAnswerValue;
     //public GameObject correctAnswerText;
@@ -66,24 +76,38 @@ public class ScrambleScentence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        listLenght = maxQuestionValue;
+        list = new List<int>(new int[listLenght]);
+
+        for (int j = 1; j < listLenght; j++)
+        {
+            randNumber = Random.Range(1, maxQuestionValue + 1);
+
+            while (list.Contains(randNumber))
+            {
+                randNumber = Random.Range(1, maxQuestionValue + 1);
+            }
+
+            list[j] = randNumber;
+            print(list[j]);
+        }
+
         //GameLoaded();
         scoreText.text = "0";
-        questionNumber.text = "Q.1/"+ maxQuestionValue.ToString();
+        questionNumber.text = "Q.1/" + maxQuestionValue.ToString();
         sentences = sentenceDataScriptable.sentences;
-        sentence = sentences[Random.Range(0, sentences.Count)];
+        sentence = sentences[list[value]];
         answerSentence = sentence + " ";
         Debug.Log(answerSentence);
         buttonText = buttonPrefab.GetComponentInChildren<Text>();
         SplitSentence(sentence);
         RandomizeArray(words);
-        
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
     public void SplitSentence(string sentence)
@@ -99,7 +123,7 @@ public class ScrambleScentence : MonoBehaviour
 
     public void RandomizeArray(string[] sentenceArray)
     {
-        for(int i = sentenceArray.Length - 1; i > 0; i--)
+        for (int i = sentenceArray.Length - 1; i > 0; i--)
         {
             var r = Random.Range(0, i);
             var temp = sentenceArray[i];
@@ -110,7 +134,7 @@ public class ScrambleScentence : MonoBehaviour
         for (int i = 0; i < sentenceArray.Length; i++)
         {
             GameObject wordButton = Instantiate(buttonPrefab, optionsPanel.transform);
-            wordButton.GetComponentInChildren<Text>().text = sentenceArray[i];          
+            wordButton.GetComponentInChildren<Text>().text = sentenceArray[i];
         }
 
         //optionsPanel.GetComponent<VerticalLayoutGroup>().childScaleHeight = false;
@@ -122,35 +146,48 @@ public class ScrambleScentence : MonoBehaviour
         buttonAudioSource.PlayOneShot(optionSelected);
         GameObject copy;
         copy = Instantiate(option);
-        copy.transform.SetParent(answerPanel.transform,false);
+        copy.transform.SetParent(answerPanel.transform, false);
         copy.GetComponent<Button>().enabled = false;
         option.SetActive(false);
-
+        copyOptions.Add(copy);
+        originalOptions.Add(option);
     }
 
-    public void ResetOptions()
+    public void RemoveSelectedOption()
     {
-        foreach(Transform child in answerPanel.transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        foreach(Transform child in optionsPanel.transform)
-        {
-            child.gameObject.SetActive(true);
-        }
-        correctImage.SetActive(false);
-        wrongImage.SetActive(false);
-        //correctAnswerText.GetComponent<Text>().text = " ";
-
+        int originalIndex = originalOptions.Count;
+        int copyIndex = copyOptions.Count;
+        Debug.Log(copyIndex);
+        Destroy(copyOptions[copyOptions.Count -1].gameObject);
+        originalOptions[originalOptions.Count - 1].gameObject.SetActive(true);
+        copyOptions.RemoveAt(copyOptions.Count - 1);
+        originalOptions.RemoveAt(originalOptions.Count - 1);   
     }
+
+    //public void ResetOptions()
+    //{
+    //    foreach(Transform child in answerPanel.transform)
+    //    {
+    //        Destroy(child.gameObject);
+    //    }
+
+    //    foreach(Transform child in optionsPanel.transform)
+    //    {
+    //        child.gameObject.SetActive(true);
+    //    }
+    //    correctImage.SetActive(false);
+    //    wrongImage.SetActive(false);
+    //    //correctAnswerText.GetComponent<Text>().text = " ";
+
+    //}
 
     public void SubmitAnswer()
     {
         if (currentQuestionValue >= maxQuestionValue)
         {
             Debug.Log("GameEnd Called");          
-            Invoke("GameEnd", 1f);         
+            Invoke("GameEnd", 1f);
+            value = 0;
         }
         
 
@@ -173,6 +210,7 @@ public class ScrambleScentence : MonoBehaviour
             scoreText.text = score.ToString();
             
             correctAnswerValue += 1;
+            value += 1;
             correctImage.SetActive(true);
             audioSource.PlayOneShot(correctanswer);
             Invoke("NewSentence", 1f);
@@ -188,6 +226,7 @@ public class ScrambleScentence : MonoBehaviour
             else
             {
                 //correctAnswerText.GetComponent<Text>().text = "Wrong Answer";
+                value += 1;
                 wrongImage.SetActive(true);
                 audioSource.PlayOneShot(wronganswer);
                 Invoke("NewSentence", 1f);
@@ -197,6 +236,8 @@ public class ScrambleScentence : MonoBehaviour
 
     public void NewSentence()
     {
+        
+
         //correctAnswerText.GetComponent<Text>().text = " ";
         currentQuestionValue += 1;
         correctImage.SetActive(false);
@@ -204,12 +245,12 @@ public class ScrambleScentence : MonoBehaviour
         submitButton.GetComponent<Button>().interactable = true;
 
 
-        string newSentence = sentences[Random.Range(0, sentences.Count)];
-        while(newSentence == sentence)
-        {
-            newSentence = sentences[Random.Range(0, sentences.Count)];
+        string newSentence = sentences[value];
+        //while(newSentence == sentence)
+        //{
+        //    newSentence = sentences[Random.Range(0, sentences.Count)];
             
-        }
+        //}
         //string tmp = newSentence;
 
         //while(tmp == newSentence)
