@@ -41,7 +41,7 @@ public class ScrambleScentence : MonoBehaviour
     public GameObject warningText;
 
 
-    public int maxQuestionValue;
+    public int maxQuestionValue = 10;
     public int currentQuestionValue;
 
     public int correctAnswerValue;
